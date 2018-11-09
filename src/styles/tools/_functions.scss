@@ -1,0 +1,5 @@
+// Fonts
+@function letter-spacing($photoshopSize: 0) {
+  // 1em == 1500 PS units
+  @return ($photoshopSize / 1500) * 1em;
+}

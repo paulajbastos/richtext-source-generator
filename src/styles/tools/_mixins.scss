@@ -1,0 +1,193 @@
+// Fonts and Texts
+@mixin gradientText($initialColor, $finalColor) {
+  color: $initialColor;
+  background: -webkit-linear-gradient(left, $initialColor, $finalColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin color($property, $color, $alpha: 1) {
+  #{$property}: rgba($color, $alpha);
+
+  $win-color: map-get($win-colors, #{$color});
+  @if ($win-color) {
+    .win-colors & {
+      #{$property}: rgba($win-color, $alpha);
+    }
+  }
+}
+
+// Main font
+@mixin font($wheight, $size, $height: inherit, $color: $color__white) {
+  font-family: 'Oswald', sans-serif;
+  font-weight: $wheight;
+  color: $color;
+  font-size: rem($size);
+  line-height: rem($height);
+}
+
+
+// Boxes
+@mixin rounded-border($color: 'transparent') {
+  border-radius: $border-radius-width;
+  border: rem(1.2) solid #{$color};
+}
+
+
+// Geometric Shapes
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}
+
+
+// Lines
+@mixin base-after-line($color) {
+  position: absolute;
+  display: block;
+  background: $color;
+  content: '';
+}
+
+@mixin horizontal-after-line($color, $size) {
+  @include base-after-line($color);
+  height: rem(1.2);
+  width: $size;
+}
+
+@mixin vertical-after-line($color, $size) {
+  @include base-after-line($color);
+  height: $size;
+  width: rem(1);
+}
+
+
+// Alignment
+@mixin absolute-center($width) {
+  left: 50%;
+  margin-left: ($width / 2) * -1;
+}
+
+@mixin absolute-center-vertical($height) {
+  top: 50%;
+  margin-top: ($height / 2) * -1;
+}
+
+@mixin absolute-center-reset() {
+  left: 0;
+  margin-left: 0;
+}
+
+
+// Tables
+@mixin set-tables-fixed-and-scroll-widths($widthS, $widthM, $widthL, $widthXL) {
+  .table__fixed {
+    width: $widthS;
+
+    @include media($media__m) { width: $widthM; }
+    @include media($media__l) { width: $widthL; }
+    @include media($media__xl) { width: $widthXL; }
+  }
+
+  .table__scroll {
+    left: $widthS;
+
+    @include media($media__m) {
+      left: $widthM;
+      width: calc(100% - #{$widthM});
+    }
+    @include media($media__l) {
+      left: $widthL;
+      width: calc(100% - #{$widthL});
+    }
+    @include media($media__xl) {
+      left: $widthXL - rem(1);
+      width: calc(100% - #{$widthXL});
+    }
+  }
+}
+
+
+@mixin bg-table-line($topDistance, $height, $colorA, $colorB) {
+  background-image: linear-gradient(
+    180deg,
+    $colorB $topDistance,
+    $colorA $topDistance,
+    $colorA $topDistance + $height,
+    $colorB $topDistance + $height
+  );
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Transitions
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property:    $property;
+  -o-transition-property:      $property;
+  -webkit-transition-property: $property;
+  transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property:    $duration;
+  -o-transition-property:      $duration;
+  -webkit-transition-property: $duration;
+  transition-property:         $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function:    $timing;
+  -o-transition-timing-function:      $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function:         $timing;
+}
+
+@mixin transition-delay($delay...) {
+  -moz-transition-delay:    $delay;
+  -o-transition-delay:      $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay:         $delay;
+}
+
+@mixin transform-origin ($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+// Rotate
+@mixin transform($delay...) {
+  -webkit-transform: $delay;
+  -moz-transform: $delay;
+  -ms-transform: $delay;
+  -o-transform: $delay;
+  transform: $delay;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
