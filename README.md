@@ -126,6 +126,7 @@ script.js will be automaticaly outputed in you html file
 
 ```
 ## What you CAN'T use
+- **jquery plugins**
 - var **$namevariable** - cant't use variables with **$**
 - regexp including the **$**
 - dont't use your own **CSS resets**, it will **conflit** with the whole site's resets
