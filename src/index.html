@@ -14,6 +14,8 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
       crossorigin="anonymous"></script>
     <!-- ------  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/js/swiper.min.js"></script>
   </head>
 
   <body>
@@ -22,12 +24,66 @@
     <style rel="stylesheet" type="text/css" src="styles/main.css" inline></style>
 
     <!-- Scoped CLASS NAME -->
-    <div class="your-scoped-class-name">
+    <div class="landing-mamonas">
 
       <!-- Your contents goes here  -->
-      <div class="col-md-12">
-        <h1>This is a Template</h1>
+      <!-- <div class="col-md-12"> -->
+
+      <!-- Slider -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="sliderPrincipal">
+
+          <div class="swiper-slide">
+              <div class="img-fill banner01">
+              </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img-fill banner02">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img-fill banner03">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img-fill banner04">
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img-fill banner05">
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Scroll link -->
+        <a class="btnComprarScroll" href="#scrollComprar">
+          <img src="http://imagens.usereserva.com.br/usereserva/colabe/fila/images/btnComprar.gif">
+        </a>
+
+        <!-- Add Pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next" id="nextSlide"></div>
+        <div class="swiper-button-prev" id="prevSlide"></div>
       </div>
+      <!-- End Slider -->
+
+      <div class="wrap">
+        <div id="scrollComprar"></div>
+        <p id="textoMamonas">
+        Apenas oito meses. Foi o tempo necessário pra que a banda Mamonas Assassinas entrasse pra história do Brasil. Com a premissa de que nada deve ser levado tão a sério, a banda formada pelos amigos de Guarulhos surgiu em 1995 como um verdadeiro meteoro. Foram 3 milhões de discos vendidos em menos de 1 ano - recorde mundial - e muitos milhões de fãs saudosos até hoje. Como nós!<br/><br/>
+
+        Nossa colabe RSV+MAMONAS ASSASSINAS foi inspirada na clássica foto do único CD da banda; uma reedição dos looks usados por Dinho e companhia. São camisas, camisetas e versões RSV+ dos chapéus fantasiosos que foram transformados em bonés mantendo a paleta de cores original.
+        </p>
+      </div>
+
+      <!-- </div> -->
 
       <!-- Here is the inline JS generated file that will be outputed on dist/yourfile.html  -->
       <!-- inline src/js/script.js -->
