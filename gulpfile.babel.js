@@ -54,6 +54,7 @@ gulp.task('html', function () {
 
 gulp.task('scripts', () => {
   var _entries = [`${dirs.src}/js/main.js`];
+  //var _entries = [`${dirs.src}/plugins/swiper/swiper.js`, `${dirs.src}/js/main.js`];
 
   gulp.src(_entries)
     .pipe(concat('bundle.js'))
@@ -61,14 +62,14 @@ gulp.task('scripts', () => {
 
 
   return browserify({
-    entries: `${dirs.src}/js/bundle.js`,
+    entries: [`${dirs.src}/js/bundle.js`],
     debug: true,
     transform: [
       babelify.configure({
         'presets': ['es2015']
       })
     ]
-  })
+    })
     .bundle()
     .on('error', function () {
       var args = Array.prototype.slice.call(arguments);
