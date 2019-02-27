@@ -27,6 +27,8 @@
     "vinyl-source-stream": "^1.1.2"
   },
   "dependencies": {
-    "del": "^3.0.0"
+    "del": "^3.0.0",
+    "inputmask": "^4.0.6",
+    "jquery.inputmask": "^3.3.4"
   }
 }

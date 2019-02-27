@@ -35,27 +35,27 @@
                 <img src="https://imagens.usereserva.com.br/usereserva/leads-inverno19/images/inverno19.png">
                 <p class="tagline">Aumenta o volume! Uma nova coleção está chegando.</p>
                 <p class="text">Pela primeira vez, vamos apresentar a nossa nova coleção em um evento exclusivo. Cadastre-se e escolha a sua loja favorita para conhecer em primeira mão todos os lançamentos com <strong>20% OFF</strong>.</p>
-                <form>
+                <div id="form">
                   <div class="form-group group-margin">
                     <label for="InputNome">Nome:</label>
-                    <input type="text" class="form-control" id="InputNome" placeholder="" required>
+                    <input type="text" class="form-control" id="InputNome" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="InputEmail">E-mail:</label>
-                    <input type="email" class="form-control" id="InputEmail" placeholder="" required>
+                    <input type="email" class="form-control" id="InputEmail" placeholder="">
                   </div>
                   <div class="form-group group-margin">
                     <label for="InputCPF">CPF:</label>
-                    <input type="text" class="form-control" id="InputCPF" placeholder="" required>
+                    <input type="text" class="form-control" id="InputCPF" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="InputTelefone">Telefone:</label>
-                    <input type="text" class="form-control" id="InputTelefone" placeholder="" required>
+                    <input type="text" class="form-control" id="InputTelefone" placeholder="">
                   </div>
                   <div class="form-group select-group1 group-margin">
                     <label for="Estado">Estado:</label>
-                    <span class="arrow-down">
-                    <select class="form-control" name="Estado" id="Estado" required>
+                    <span class="arrow-down"></span>
+                    <select class="form-control" name="Estado" id="Estado">
                       <option value="" hidden selected disabled></option>
                       <option value="BA">BA</option>
                       <option value="DF">DF</option>
@@ -70,7 +70,7 @@
                   </div>
                   <div class="form-group select-group2">
                     <label for="Loja">Loja de preferência:</label>
-                    <select class="form-control" name="Loja" id="Loja" required>
+                    <select class="form-control" name="Loja" id="Loja">
                       <option UFdata="" value="" hidden selected disabled></option>
                       <!-- RJ -->
                       <option UFdata="RJ" value="Leblon">Shopping Leblon - 21/03</option>
@@ -123,9 +123,9 @@
                       <option UFdata="PR" value="Park Shopping Barigui">Park Shopping Barigui - 23/03</option>
                     </select>
                   </div>
-                  <button type="submit" class="btn btn-rsv">Quero ser o primeiro</button>
+                  <button id="submit" type="submit" class="btn btn-rsv">Quero ser o primeiro</button>
                   <div class="errorMsg">Informe um e-mail válido.</div>
-                </form>
+                </div>
               </div>
               <div class="confirmacao">
                 <p class="text">Obrigado, <strong>#Nome</strong>.<br/>
