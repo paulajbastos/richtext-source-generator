@@ -23,7 +23,13 @@ const dirs = {
 
 gulp.task('watch', function () {
   browserSync.init({
-    server: `${dirs.dist}`,
+    server: {
+      baseDir: `${dirs.dist}`,
+      middleware: function (req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+      }
+    },
     serveStaticOptions: {
       extensions: ['html']
     }
