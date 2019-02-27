@@ -39,7 +39,7 @@ gulp.task('watchCss', function (cb) {
 });
 
 gulp.task('watchJs', function (cb) {
-  gulpSequence('clean_htmls', 'clean_scripts', 'scripts', 'html')(cb);
+  gulpSequence('clean_htmls', 'clean_scripts', 'scripts', 'scripts_plugins', 'html')(cb);
 });
 
 
@@ -52,17 +52,22 @@ gulp.task('html', function () {
     .pipe(gulp.dest(`${dirs.dist}`));
 });
 
+
+// gulp.task('scripts', function() {
+//   return gulp.src([`${dirs.src}/plugins/swiper.js`, `${dirs.src}/js/main.js`])
+//     .pipe(concat('bundle.js'))
+//     .pipe(gulp.dest(`${dirs.src}/js/`));
+// });
+
 gulp.task('scripts', () => {
   var _entries = [`${dirs.src}/js/main.js`];
-  //var _entries = [`${dirs.src}/plugins/swiper/swiper.js`, `${dirs.src}/js/main.js`];
 
   gulp.src(_entries)
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest(`${dirs.src}/js/`));
-
+    .pipe(gulp.dest(`${dirs.src}/js/bundles/`));
 
   return browserify({
-    entries: [`${dirs.src}/js/bundle.js`],
+    entries: [`${dirs.src}/js/bundles/bundle.js`],
     debug: true,
     transform: [
       babelify.configure({
@@ -81,10 +86,16 @@ gulp.task('scripts', () => {
     })
     .pipe(source('script.js'))
     .pipe(buffer())
-    .pipe(gulp.dest(`${dirs.src}/js`))
+    .pipe(gulp.dest(`${dirs.src}/js/bundles`))
     .pipe(browserSync.stream());
 });
 
+
+gulp.task('scripts_plugins', function() {
+  return gulp.src([`${dirs.src}/plugins/swiper.js`, `${dirs.src}/js/bundles/script.js`])
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest(`${dirs.src}/js/`));
+});
 
 gulp.task('app_scss', function () {
   var _entries = [`${dirs.src}/styles/main.scss`];
@@ -104,7 +115,7 @@ gulp.task('app_scss', function () {
 // CLEAN
 gulp.task('clean_scripts', function () {
   return del([
-    `${dirs.src}/js/script.js`, `${dirs.src}/js/bundle.js`
+    `${dirs.src}/js/bundles/script.js`, `${dirs.src}/js/bundles/bundle.js`, `${dirs.src}/js/bundle.js`
   ]);
 });
 
@@ -132,5 +143,5 @@ gulp.task('clean', function () {
 });
 
 gulp.task('default', function(cb) {
-  gulpSequence('clean', 'app_scss', 'scripts', 'html', 'watch')(cb);
+  gulpSequence('clean', 'app_scss', 'scripts', 'scripts_plugins', 'html', 'watch')(cb);
 });
