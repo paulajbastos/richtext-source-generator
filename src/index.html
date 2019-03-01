@@ -13,6 +13,8 @@
       crossorigin="anonymous">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
       crossorigin="anonymous"></script>
+    <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js" crossorigin="anonymous"></script>
+    <!-- <script src="//unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js" crossorigin="anonymous"></script> -->
     <!-- ------  -->
   </head>
 
@@ -31,100 +33,125 @@
           <div class="box"><div class="img-fill box1"></div></div>
           <div class="box">
             <div class="box2">
-              <div class="formulario">
+              <div class="formulario rsv-form clearfix">
                 <img src="https://imagens.usereserva.com.br/usereserva/leads-inverno19/images/inverno19.png">
                 <p class="tagline">Aumenta o volume! Uma nova coleção está chegando.</p>
                 <p class="text">Pela primeira vez, vamos apresentar a nossa nova coleção em um evento exclusivo. Cadastre-se e escolha a sua loja favorita para conhecer em primeira mão todos os lançamentos com <strong>20% OFF</strong>.</p>
                 <div id="form">
-                  <div class="form-group group-margin">
-                    <label for="InputNome">Nome:</label>
-                    <input type="text" class="form-control" id="InputNome" placeholder="">
+                  <div class="form-group -group-input">
+                    <div class="form-item">
+                        <label class="float-label" for="">Nome</label>
+                        <input type="text" id="fieldName" name="fieldName" class="form-input" placeholder="Nome">
+                        <div class="msg-block">Informe o nome.</div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="InputEmail">E-mail:</label>
-                    <input type="email" class="form-control" id="InputEmail" placeholder="">
+
+                  <div class="form-group -group-input">
+                    <div class="form-item">
+                        <label class="float-label" for="">E-mail</label>
+                        <input type="email" id="fieldEmail" name="fieldEmail" class="form-input"
+                        placeholder="E-mail">
+                        <div class="msg-block">Informe o e-mail.</div>
+                    </div>
                   </div>
-                  <div class="form-group group-margin">
-                    <label for="InputCPF">CPF:</label>
-                    <input type="text" class="form-control" id="InputCPF" placeholder="">
+
+                  <div class="form-group -group-input">
+                    <div class="form-item">
+                        <label class="float-label" for="">CPF</label>
+                        <input type="tel" class="form-input" name="fieldCpf" id="fieldCpf"
+                        placeholder="CPF">
+                        <div class="msg-block">Informe o CPF.</div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="InputTelefone">Telefone:</label>
-                    <input type="text" class="form-control" id="InputTelefone" placeholder="">
+
+                  <div class="form-group -group-input">
+                    <div class="form-item">
+                        <label class="float-label" for="">Telefone</label>
+                        <input type="tel" id="fieldPhone" name="fieldPhone" class="form-input"
+                        placeholder="Telefone">
+                        <div class="msg-block">Informe o telefone.</div>
+                    </div>
                   </div>
-                  <div class="form-group select-group1 group-margin">
-                    <label for="Estado">Estado:</label>
-                    <span class="arrow-down"></span>
-                    <select class="form-control" name="Estado" id="Estado">
-                      <option value="" hidden selected disabled></option>
-                      <option value="BA">BA</option>
-                      <option value="DF">DF</option>
-                      <option value="MG">MG</option>
-                      <option value="PE">PE</option>
-                      <option value="PR">PR</option>
-                      <option value="RJ">RJ</option>
-                      <option value="RS">RS</option>
-                      <option value="SC">SC</option>
-                      <option value="SP">SP</option>
-                    </select>
+                  <div class="form-group -group-input select-group1 ">
+                    <div class="form-item">
+                        <label class="float-label" for="">Estado</label>
+                        <!-- <input type="tel" class="form-input" name="fieldCpf" maxlength="11" id="fieldCpf"
+                        placeholder="CPF"> -->
+                        <select class="form-control" name="selectEstado" id="selectEstado">
+                          <option value="" selected disabled>UF</option>
+                          <option value="BA">BA</option>
+                          <option value="DF">DF</option>
+                          <option value="MG">MG</option>
+                          <option value="PE">PE</option>
+                          <option value="PR">PR</option>
+                          <option value="RJ">RJ</option>
+                          <option value="RS">RS</option>
+                          <option value="SC">SC</option>
+                          <option value="SP">SP</option>
+                        </select>
+                        <div class="msg-block">Selecione o Estado e Loja.</div>
+                    </div>
                   </div>
-                  <div class="form-group select-group2">
-                    <label for="Loja">Loja de preferência:</label>
-                    <select class="form-control" name="Loja" id="Loja">
-                      <option UFdata="" value="" hidden selected disabled></option>
-                      <!-- RJ -->
-                      <option UFdata="RJ" value="Leblon">Shopping Leblon - 21/03</option>
-                      <option UFdata="RJ" value="Rio Sul">Rio Sul - 21/03</option>
-                      <option UFdata="RJ" value="Rio Design Barra">Rio Design Barra - 21/03</option>
-                      <option UFdata="RJ" value="Barra Shopping">Barra Shopping - 21/03</option>
-                      <option UFdata="RJ" value="Shopping Tijuca">Shopping Tijuca - 22/03</option>
-                      <option UFdata="RJ" value="Plaza Shopping">Plaza Shopping - 22/03</option>
-                      <option UFdata="RJ" value="Icaraí">Icaraí - 22/03</option>
-                      <option UFdata="RJ" value="Norte Shopping">Norte Shopping - 22/03</option>
-                      <option UFdata="RJ" value="Ipanema">Ipanema - 23/03</option>
-                      <option UFdata="RJ" value="Village Mall">Village Mall - 23/03</option>
-                      <option UFdata="RJ" value="Bossa Nova Mall">Bossa Nova Mall - 23/03</option>
-                      <option UFdata="RJ" value="Fashion Mall">Fashion Mall - 23/03</option>
-                      <option UFdata="RJ" value="Búzios">Búzios - 23/03</option>
-                      <option UFdata="RJ" value="Shopping da Gávea">Shopping da Gávea - 23/03</option>
-                      <!-- SP -->
-                      <option UFdata="SP" value="Shopping Iguatemi">Shopping Iguatemi - 21/03</option>
-                      <option UFdata="SP" value="Jardins">Jardins - 21/03</option>
-                      <option UFdata="SP" value="JK Iguatemi Shopping">JK Iguatemi Shopping - 21/03</option>
-                      <option UFdata="SP" value="Shopping Morumbi">Shopping Morumbi - 22/03</option>
-                      <option UFdata="SP" value="Shopping Pátio Higienópolis">Shopping Pátio Higienópolis - 22/03</option>
-                      <option UFdata="SP" value="Pátio Paulista">Pátio Paulista - 22/03</option>
-                      <option UFdata="SP" value="Market Place">Market Place - 22/03</option>
-                      <option UFdata="SP" value="Iguatemi Campinas">Iguatemi Campinas - 23/03</option>
-                      <option UFdata="SP" value="Ribeirão Shopping">Ribeirão Shopping - 23/03</option>
-                      <option UFdata="SP" value="Morumbi Town">Morumbi Town - 23/03</option>
-                      <option UFdata="SP" value="Iguatemi Alphaville">Iguatemi Alphaville - 23/03</option>
-                      <option UFdata="SP" value="Shopping Anália Franco">Shopping Anália Franco - 23/03</option>
-                      <!-- MG -->
-                      <option UFdata="MG" value="BH Shopping">BH Shopping - 21/03</option>
-                      <option UFdata="MG" value="Pátio Savassi">Pátio Savassi - 22/03</option>
-                      <option UFdata="MG" value="DiamondMall">DiamondMall - 23/03</option>
-                      <!-- RS -->
-                      <option UFdata="RS" value="Iguatemi Porto Alegre">Iguatemi Porto Alegre - 22/03</option>
-                      <option UFdata="RS" value="Shopping Barra Sul">Shopping Barra Sul - 22/03</option>
-                      <option UFdata="RS" value="Canoas Shopping">Canoas Shopping - 23/03</option>
-                      <!-- BA -->
-                      <option UFdata="BA" value="Salvador Shopping">Salvador Shopping - 22/03</option>
-                      <option UFdata="BA" value="Shopping da Bahia">Shopping da Bahia - 22/03</option>
-                      <option UFdata="BA" value="Barra Salvador">Barra Salvador - 22/03</option>
-                      <!-- DF -->
-                      <option UFdata="DF" value="Park Shopping">Park Shopping - 22/03</option>
-                      <option UFdata="DF" value="Iguatemi DF">Iguatemi DF - 22/03</option>
-                      <!-- PE -->
-                      <option UFdata="PE" value="Shopping Recife">Shopping Recife - 22/03</option>
-                      <!-- SC -->
-                      <option UFdata="SC" value="Iguatemi Florianópilos">Iguatemi Florianópilos - 23/03</option>
-                      <!-- PR -->
-                      <option UFdata="PR" value="Park Shopping Barigui">Park Shopping Barigui - 23/03</option>
-                    </select>
+                  <div class="form-group -group-input select-group2 ">
+                    <div class="form-item">
+                      <label class="float-label" for="">Loja</label>
+                      <!-- <input type="tel" class="form-input" name="fieldCpf" maxlength="11" id="fieldCpf"
+                      placeholder="CPF"> -->
+                      <select class="form-control" name="selectLoja" id="selectLoja">
+                        <option UFdata="" selected disabled>Selecione um Estado</option>
+                        <!-- RJ -->
+                        <option UFdata="RJ" value="Leblon">Shopping Leblon - 21/03</option>
+                        <option UFdata="RJ" value="Rio Sul">Rio Sul - 21/03</option>
+                        <option UFdata="RJ" value="Rio Design Barra">Rio Design Barra - 21/03</option>
+                        <option UFdata="RJ" value="Barra Shopping">Barra Shopping - 21/03</option>
+                        <option UFdata="RJ" value="Shopping Tijuca">Shopping Tijuca - 22/03</option>
+                        <option UFdata="RJ" value="Plaza Shopping">Plaza Shopping - 22/03</option>
+                        <option UFdata="RJ" value="Icaraí">Icaraí - 22/03</option>
+                        <option UFdata="RJ" value="Norte Shopping">Norte Shopping - 22/03</option>
+                        <option UFdata="RJ" value="Ipanema">Ipanema - 23/03</option>
+                        <option UFdata="RJ" value="Village Mall">Village Mall - 23/03</option>
+                        <option UFdata="RJ" value="Bossa Nova Mall">Bossa Nova Mall - 23/03</option>
+                        <option UFdata="RJ" value="Fashion Mall">Fashion Mall - 23/03</option>
+                        <option UFdata="RJ" value="Búzios">Búzios - 23/03</option>
+                        <option UFdata="RJ" value="Shopping da Gávea">Shopping da Gávea - 23/03</option>
+                        <!-- SP -->
+                        <option UFdata="SP" value="Shopping Iguatemi">Shopping Iguatemi - 21/03</option>
+                        <option UFdata="SP" value="Jardins">Jardins - 21/03</option>
+                        <option UFdata="SP" value="JK Iguatemi Shopping">JK Iguatemi Shopping - 21/03</option>
+                        <option UFdata="SP" value="Shopping Morumbi">Shopping Morumbi - 22/03</option>
+                        <option UFdata="SP" value="Shopping Pátio Higienópolis">Shopping Pátio Higienópolis - 22/03</option>
+                        <option UFdata="SP" value="Pátio Paulista">Pátio Paulista - 22/03</option>
+                        <option UFdata="SP" value="Market Place">Market Place - 22/03</option>
+                        <option UFdata="SP" value="Iguatemi Campinas">Iguatemi Campinas - 23/03</option>
+                        <option UFdata="SP" value="Ribeirão Shopping">Ribeirão Shopping - 23/03</option>
+                        <option UFdata="SP" value="Morumbi Town">Morumbi Town - 23/03</option>
+                        <option UFdata="SP" value="Iguatemi Alphaville">Iguatemi Alphaville - 23/03</option>
+                        <option UFdata="SP" value="Shopping Anália Franco">Shopping Anália Franco - 23/03</option>
+                        <!-- MG -->
+                        <option UFdata="MG" value="BH Shopping">BH Shopping - 21/03</option>
+                        <option UFdata="MG" value="Pátio Savassi">Pátio Savassi - 22/03</option>
+                        <option UFdata="MG" value="DiamondMall">DiamondMall - 23/03</option>
+                        <!-- RS -->
+                        <option UFdata="RS" value="Iguatemi Porto Alegre">Iguatemi Porto Alegre - 22/03</option>
+                        <option UFdata="RS" value="Shopping Barra Sul">Shopping Barra Sul - 22/03</option>
+                        <option UFdata="RS" value="Canoas Shopping">Canoas Shopping - 23/03</option>
+                        <!-- BA -->
+                        <option UFdata="BA" value="Salvador Shopping">Salvador Shopping - 22/03</option>
+                        <option UFdata="BA" value="Shopping da Bahia">Shopping da Bahia - 22/03</option>
+                        <option UFdata="BA" value="Barra Salvador">Barra Salvador - 22/03</option>
+                        <!-- DF -->
+                        <option UFdata="DF" value="Park Shopping">Park Shopping - 22/03</option>
+                        <option UFdata="DF" value="Iguatemi DF">Iguatemi DF - 22/03</option>
+                        <!-- PE -->
+                        <option UFdata="PE" value="Shopping Recife">Shopping Recife - 22/03</option>
+                        <!-- SC -->
+                        <option UFdata="SC" value="Iguatemi Florianópilos">Iguatemi Florianópilos - 23/03</option>
+                        <!-- PR -->
+                        <option UFdata="PR" value="Park Shopping Barigui">Park Shopping Barigui - 23/03</option>
+                      </select> 
+                    </div>
                   </div>
                   <button id="submit" type="submit" class="btn btn-rsv">Quero ser o primeiro</button>
-                  <div class="errorMsg">Informe um e-mail válido.</div>
                 </div>
               </div>
               <div class="confirmacao">
