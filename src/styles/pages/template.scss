@@ -1,28 +1,39 @@
-  @font-face {
-  font-family: 'DINPro-Regular';
-  src: url('https://imagens.usereserva.com.br/usereserva/fonte/dinpro_regular/DINPro-Regular.eot');
-  src: url('https://imagens.usereserva.com.br/usereserva/fonte/dinpro_regular/DINPro-Regular.eot?#iefix') format('embedded-opentype')
-  url('https://imagens.usereserva.com.br/usereserva/fonte/dinpro_regular/DINPro-Regular.woff') format('woff')
-  url('https://imagens.usereserva.com.br/usereserva/fonte/dinpro_regular/DINPro-Regular.ttf')  format('truetype')
-  url('https://imagens.usereserva.com.br/usereserva/fonte/dinpro_regular/DINPro-Regular.svg#DINPro-Regular') format('svg');
-  font-weight: 400;
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Medium.eot');
+  src: url('./fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Medium.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Medium.svg#DINNextLTPro-Medium') format('svg');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Chalet';
-  src: url('https://imagens.usereserva.com.br/usereserva/fonte/cahalet/chaletnewyorknineteenseventy-webfont.eot');
-  src: url('https://imagens.usereserva.com.br/usereserva/fonte/cahalet/chaletnewyorknineteenseventy-webfont.eot?#iefix') format('embedded-opentype'),
-      url('https://imagens.usereserva.com.br/usereserva/fonte/cahalet/chaletnewyorknineteenseventy-webfont.woff') format('woff'),
-      url('https://imagens.usereserva.com.br/usereserva/fonte/cahalet/chaletnewyorknineteenseventy-webfont.ttf') format('truetype'),
-      url('https://imagens.usereserva.com.br/usereserva/fonte/cahalet/chaletnewyorknineteenseventy-webfont.svg#chaletnewyorknineteenseventy-webfont') format('svg');
-  font-weight: normal;
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Bold.eot');
+  src: url('./fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Bold.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Bold.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Bold.svg#DINNextLTPro-Bold') format('svg');
+  font-weight: bold;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Light.eot');
+  src: url('./fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Light.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Light.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Light.svg#DINNextLTPro-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 // Fonts
-$font: 'DINPro-Regular', sans-serif;
-$font-title: 'Chalet', sans-serif;
+$font: 'DIN Next LT Pro', sans-serif;
 
 .cf:after {
   content: '';
@@ -30,1689 +41,1638 @@ $font-title: 'Chalet', sans-serif;
   clear: both;
 }
 
-#header {
-  position: relative;
-  z-index: 99999;
-  &.mini {
-    height: 40px;
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin calcDesk($property, $value) {
+  #{$property}: -moz-calc(0.85 * #{$value});
+  #{$property}: -webkit-calc(0.85 * #{$value});
+  #{$property}: calc(0.85 * #{$value});
+}
+
+@mixin calcLaptop($property, $value) {
+  #{$property}: -moz-calc(0.73 * #{$value});
+  #{$property}: -webkit-calc(0.73 * #{$value});
+  #{$property}: calc(0.73 * #{$value});
+}
+
+@mixin calcSmallLaptop($property, $value) {
+  #{$property}: -moz-calc(0.64 * #{$value});
+  #{$property}: -webkit-calc(0.64 * #{$value});
+  #{$property}: calc(0.64 * #{$value});
+}
+
+@mixin calcTablet($property, $value) {
+  #{$property}: -moz-calc(0.51 * #{$value});
+  #{$property}: -webkit-calc(0.51 * #{$value});
+  #{$property}: calc(0.51 * #{$value});
+}
+
+// General
+.reserva-mini-inverno * {
+  font-family: $font;
+}
+
+.rm-title {
+  margin-bottom: 40px;
+  color: #090088;
+  font-family: $font;
+  font-size: 62px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+
+  &.white {
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 50px);
+    @include calcDesk(font-size, 50px);
+    letter-spacing: 5px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 50px);
+    @include calcLaptop(font-size, 50px);
+    letter-spacing: 3px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 50px);
+    @include calcSmallLaptop(font-size, 50px);
+    letter-spacing: 1px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 50px);
+    @include calcTablet(font-size, 50px);
   }
 }
 
-#footerBar{
-  display: none;
-  position: absolute;
-  z-index: 99999;
+.rm-paragraph {
+  margin-bottom: 80px;
+  color: #090088;
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 500;
+
+  &.white {
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 80px);
+    @include calcDesk(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 80px);
+    @include calcLaptop(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 80px);
+    @include calcSmallLaptop(font-size, 25px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 80px);
+    @include calcTablet(font-size, 25px);
+  }
 }
 
-.hmv-wrap-page {
-  position: absolute;
-  z-index: 0;
-  height: calc(100vh);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.rm-btn {
+  display: inline-block;
+  width: 275px;
+  height: 58px;
+  background-color: #090088;
+  color: #FFFFFF;
+  font-family: $font;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 61px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+
+  &:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  &.white {
+    background-color: #FFFFFF;
+    color: #090088;
+
+    &:hover {
+      text-decoration: none;
+      color: #090088;
+    }
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(width, 235px);
+    @include calcDesk(height, 58px);
+    @include calcDesk(font-size, 30px);
+    @include calcDesk(line-height, 61px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(width, 235px);
+    @include calcLaptop(height, 58px);
+    @include calcLaptop(font-size, 30px);
+    @include calcLaptop(line-height, 61px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(width, 235px);
+    @include calcSmallLaptop(height, 58px);
+    @include calcSmallLaptop(font-size, 30px);
+    @include calcSmallLaptop(line-height, 61px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(width, 235px);
+    @include calcTablet(height, 58px);
+    @include calcTablet(font-size, 30px);
+    @include calcTablet(line-height, 61px);
+  }
+}
+
+.reserva-mini-inverno {
   overflow: hidden;
+}
 
-  #footerBar{
+// HERO
+.hero {
+  clear: both;
+  display: block;
+  height: 84vh;
+  width: 100%;
+}
+
+.video-hero {
+  display: block;
+  position: absolute;
+  height: 84vh;
+  width: 100%;
+}
+
+.intro {
+  display: block;
+  clear: both;
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  width: 100%;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 500px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 500px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 500px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 500px);
+  }
+}
+
+.super-title {
+  position: absolute;
+  left: 115px;
+  top: -196px;
+  color: #090088;
+  font-family: $font;
+  font-size: 190px;
+  line-height: 1;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  span {
     display: block;
-    width: 100%;
   }
 
-  h1,h2,h3,h4,h5,h6,p,a,span,label,input,button,select {
-    font-family: $font;
-    text-transform: none;
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(top, -170px);
+    @include calcDesk(font-size, 160px);
   }
 
-  .continue {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: fixed;
-    z-index: 4;
-    bottom: 20px;
-    left: 20px;
-    opacity: 0;
-    transition: all 1.3s ease;
-
-    &.active-continue {
-      opacity: 1;
-    }
-
-    @media screen and (max-width: 1024px) {
-      bottom: 10px;
-    }
-
-    p {
-      color: #ffffff;
-      font-family: $font-title;
-      font-size: 20px;
-      letter-spacing: -0.48px;
-      margin-right: 8px;
-      font-weight: 100;
-
-      @media screen and (max-width: 1024px) {
-        font-size: 16px;
-      }
-    }
-
-    .continue-steps {
-      height: 8px;
-
-      @media screen and (max-width: 1024px) {
-        height: 6px;
-      }
-    }
-
-    .continue-step {
-      display: inline-block;
-      vertical-align: top;
-      margin: 0 2px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      webkit-box-shadow: 1px 1px 3px 0px #8a8a8a;
-      -moz-box-shadow: 1px 1px 3px 0px #8a8a8a;
-      box-shadow: 1px 1px 3px 0px #8a8a8a;
-      cursor: pointer;
-
-      &.active-step {
-        background-color: #ffc702;
-      }
-
-      @media screen and (max-width: 1024px) {
-        width: 6px;
-        height: 6px;
-      }
-    }
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(top, -170px);
+    @include calcLaptop(font-size, 160px);
   }
 
-  #back-top {
-    display: none;
-    z-index: 9;
-    position: absolute;
-    right: 70px;
-    bottom: 20px;
-    text-decoration: none;
-    width: 110px;
-
-    @media screen and (max-width: 1440px) {
-      width: 90px;
-    }
-
-    @media screen and (max-width: 1024px) {
-      width: 60px;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(top, -175px);
+    @include calcSmallLaptop(font-size, 160px);
   }
 
-  .page {
-    transition: transform 1.5s cubic-bezier(0.25,0.1,0.25,1);
-
-    &.page-home {
-      transition: transform 6s cubic-bezier(0.25,0.1,0.25,1);
-    }
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(top, -186px);
+    @include calcTablet(font-size, 160px);
   }
+}
 
-  .row-line {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
+.part-one {
+  opacity: 0;
+  @include transition(all 1s ease-in-out);
+  @include transform(translate(0, 200px));
 
-    &.reverse {
-      flex-direction: row-reverse;
-    }
-  }
-
-  .block-page {
-    flex: 0 0 auto;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    
-    .bag-link {
-      transition: all 1s ease-in-out;
-      opacity: 0;
-    }
-
-    &.active-block {
-
-      .bag-link {
-        opacity: 1;
-      }
-    }
-  }
-
-  // buttons
-  .bag-link {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    width: 45px;
-    height: 45px;
-    background-color: #fff;
-    border-radius: 50%;
-
-    @media screen and (max-width: 1280px) {
-      width: 35px;
-      height: 35px;
-    }
-
-    img {
-      display: block;
-      width: 50%;
-      height: auto;
-      margin: 10px auto;
-
-      @media screen and (max-width: 1280px) {
-        margin: 8px auto;
-      }
-    }
-  }
-
-  .butn {
-    display: block;
-    width: 66px;
-    height: 66px;
-    border-radius: 33px;
-    overflow: hidden;
-    text-align: center;
-    transition: all .4s ease-in-out;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 1680px) {
-      width: 56px;
-      height: 56px;
-      border-radius: 28px;
-    }
-    
-    @media screen and (max-width: 1280px) {
-      width: 50px;
-      height: 50px;
-    }
-
-    span {
-      white-space: nowrap;
-    }
-
-    .butn-more {
-      display: inline;
-      font-family: $font;
-      font-size: 62px;
-      line-height: 52px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 54px;
-        line-height: 44px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 44px;
-        line-height: 40px;
-      }
-    }
-
-    .butn-text {
-      display: none;
-      font-family: $font-title;
-      font-size: 22px;
-      font-weight: 400;
-      text-align: center;
-      line-height: 66px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 18px;
-        line-height: 56px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        width: 16px;
-        line-height: 50px;
-      }
-    }
-
-    &:hover {
-      width: 220px;
-      
-      .butn-more {
-        display: none;
-      }
-
-      .butn-text {
-        display: inline;
-      }
-    }
-  }
-
-  // hero
-  .hero {
-    overflow: hidden;
-    background-color: #45a8ad;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('../img/hero.jpg');
-
-
-    iframe {
-      width: 140vw;
-      height: 76.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-      min-height: 100vh;
-      min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-      position: absolute;
-      top: 30%;
-      //top: 50%;
-      left: 50%;
-      transform: translate(-50%, calc(-50% + 185px));
-    }
-
-    .arrow-down {
-      display: block;
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      margin-left: -21px;
-      -moz-animation: bounce 3s infinite;
-      -webkit-animation: bounce 3s infinite;
-      animation: bounce 3s infinite;
-
-      @media screen and (max-width: 1440px) {
-        width: 36px;
-        height: auto;
-        margin-left: -18px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        width: 32px;
-        height: auto;
-        margin-left: -16px;
-      }
-    }
-  }
-
-  @-moz-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -webkit-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      -ms-transform: translateY(-30px);
-      -webkit-transform: translateY(-30px);
-      transform: translateY(-30px);
-    }
-    60% {
-      -moz-transform: translateY(-15px);
-      -ms-transform: translateY(-15px);
-      -webkit-transform: translateY(-15px);
-      transform: translateY(-15px);
-    }
-  }
-
-  .play-audio {
-    display: block;
-    position: absolute;
-    z-index: 10;
-    top: 170px;
-    left: 30px;
-
-    audio {
-      display: none;
-    }
-  }
-
-  .bars {
-    display: block;
-    position: relative;
-    width: 45px;
-    height: 30px;
-
-    &.stop-play {
-      .bar {
-        animation-play-state: paused;
-      }
-    }
-  }
-
-  .bar {
-    background: #ff6750;
-    bottom: 1px;
-    height: 3px;
-    position: absolute;
-    width: 3px;      
-    animation: sound 0ms -800ms linear infinite alternate;
-  }
-
-  .bar:nth-child(1) { left: 1px; animation-duration: 474ms; }
-  .bar:nth-child(2) { left: 9px; animation-duration: 433ms; }
-  .bar:nth-child(3) { left: 17px; animation-duration: 407ms; }
-  .bar:nth-child(4) { left: 25px; animation-duration: 458ms; }
-  .bar:nth-child(5) { left: 33px; animation-duration: 400ms; }
-  .bar:nth-child(6) { left: 41px; animation-duration: 427ms; }
-
-  @keyframes sound {
-    0% {
-      opacity: .55;
-      height: 3px; 
-    }
-    100% {
-      opacity: 1;       
-      height: 28px;        
-    }
-  }
-
-  #why-not {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    display: block;
-    width: 400px;
-    height: auto;
-    transform: translateY(34px);
-
-    @media screen and (max-width: 1440px) {
-      width: 280px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      width: 230px;
-    }
-
-    .svg-animation {
-      transition: all 3.5s ease;
-      opacity: 1;
-    }
-
-    .svg-animation:nth-of-type(1) { transform: translateY(-8%); }
-    .svg-animation:nth-of-type(2) { transform: translateY(-21%); }
-    .svg-animation:nth-of-type(3) { transform: translateY(-15%); }
-    .svg-animation:nth-of-type(4) { transform: translateY(-28%); }
-    .svg-animation:nth-of-type(5) { transform: translateY(-41%); }
-    .svg-animation:nth-of-type(6) { transform: translateY(-35%); }
-    .svg-animation:nth-of-type(7) { transform: translateY(-10%); }
-    .svg-animation:nth-of-type(8) { transform: translateY(-5%); }
-    .svg-animation:nth-of-type(9) { transform: translateY(-30%); }
-    .svg-animation:nth-of-type(10) { transform: translateY(-42%); }
-    .svg-animation:nth-of-type(11) { transform: translateY(-31%); }
-    .svg-animation:nth-of-type(12) { transform: translateY(-12%); }
-    .svg-animation:nth-of-type(13) { transform: translateY(-4%); }
-    .svg-animation:nth-of-type(14) { transform: translateY(-21%); }
-  }
-
-  .bg-svg {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    transform: scale(1);
+  &.active {
     opacity: 1;
-    transition: all 1.5s ease-out;
+    @include transform(translate(0, 0));
+  }
+}
+
+.part-two {
+  opacity: 0;
+  @include transition(all 1s ease-in-out);
+  @include transform(translate(0, 200px));
+
+  &.active {
+    opacity: 1;
+    @include transform(translate(0, 0));
+  }
+}
+
+.part-three {
+  opacity: 0;
+  @include transition(all 1s ease-in-out);
+  @include transform(translate(0, 200px));
+
+  &.active {
+    opacity: 1;
+    @include transform(translate(0, 0));
+  }
+}
+
+.intro-paragraph {
+  position: absolute;
+  top: 211px;
+  right: 211px;
+  width: 730px;
+
+  @media screen and (max-width: 1680px) {
+    top: 155px;
+    @include calcDesk(right, 115px);
+    @include calcDesk(width, 730px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    top: 135px;
+    @include calcLaptop(right, 115px);
+    @include calcLaptop(width, 730px);
   }
 
-  .hero.active-block {
-    #why-not .svg-animation {
-      transform: translateY(0);
-      opacity: 0;
-    }
-
-    .bg-svg {
-      transform: scale(2);
-      opacity: 0;
-      transition: all 4s ease-out;
-    }
+  @media screen and (max-width: 1280px) {
+    top: 110px;
+    @include calcSmallLaptop(right, 115px);
+    @include calcSmallLaptop(width, 730px);
   }
 
-  // Preface
-  .preface {
-    overflow: hidden;
-    background-color: #dce3e4;
+  @media screen and (max-width: 1024px) {
+    top: 90px;
+    @include calcTablet(right, 115px);
+    @include calcTablet(width, 730px);
+  }
+}
 
-    &.active-block {
-      .preface-image {
-        transform: translate(0, 0);
-      }
-    }
+// TSHIRTS
+.tshirts {
+  display: block;
+  width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
   }
 
-  .preface-left {
-    position: absolute;
-    z-index: 2;
-    bottom: 0;
-    left: 0;
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-tshirts {
+  position: relative;
+  display: block;
+  width: 80%;
+
+  .tshirts-img-1 {
     display: block;
-    width: 60vw;
-  }
-
-  .preface-title {
-    position: absolute;
-    width: 100vw;
-    top: -70px;
-    z-index: 2;
-    display: block;
-    float: left;
-    color: #16284c;
-    font-family: $font-title;
-    font-size: 120px;
-    letter-spacing: -0.48px;
-    text-align: center;
-
-    @media screen and (max-width: 1680px) {
-      font-size: 100px;
-    }
-
-    @media screen and (max-width: 1440px) {
-      top: -60px;
-      font-size: 90px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      top: -50px;
-      font-size: 75px;
-    }
-  }
-
-  .preface-image {
     width: 100%;
-    height: auto;
-    transition: all 1s ease-in-out;
-    transform: translate(-40%, 30%);
   }
 
-  .preface-box {
+  .rm-cta {
     position: absolute;
-    top: 70px;
-    right: -22vw;
-    width: 20vw;
-    padding: 40px 0 0 35px;
-    margin-bottom: 40px;
-
-    @media screen and (max-width: 1024px) {
-      top: 0;
-    }
-
-    p {
-      margin-bottom: 40px;
-      color: #16284c;
-      font-family: $font;
-      font-size: 26px;
-      letter-spacing: -0.57px;
-      line-height: 1.3;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 22px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 20px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 18px;
-      }
-    }
-  }
-
-  .butn-preface {
-    background-color: #ff6750;
-    color: #ffc702;
-  }
-
-  .preface-circle-1,
-  .preface-circle-2,
-  .preface-worm {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .preface-circle-1 {
-    top: 3vh;
-    right: 2vw;
-    width: 57px;
-  }
-
-  .preface-circle-2 {
-    bottom: 5vh;
-    left: 70vw;
-    width: 92px;
-  }
-
-  .preface-worm {
-    bottom: 20vh;
-    right: -1vw;
-    width: 303px;
-  }
-
-  // Tshirts
-  .tshirts {
-    background-color: #45a8ad;
-
-    &.active-block {
-      .tshirts-top {
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-name: oneTwoOne;
-        animation-name: oneTwoOne;
-      }
-
-      .tshirts-image-1,
-      .tshirts-image-2 {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
-  .tshirts-top {
-    position: relative;
-    z-index: 2;
-    width: 80vw;
-
-    .tshirts-title {
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 2vw;
-      margin-right: 30px;
-      color: #ffc702;
-      font-family: $font-title;
-      font-size: 120px;
-      letter-spacing: -0.48px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 100px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 90px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 75px;
-      }
-    }
-
-    .butn-tshirts {
-      display: inline-block;
-      vertical-align: middle;
-      background-color: #16284c;
-      color: #ffc702;
-    }
-  }
-
-  .tshirts-left {
-    position: absolute;
-    z-index: 1;
-    width: 42vw;
-    top: 20vh;
-    left: 3vw;
-
-    .bag-link {
-      top: 43%;
-      right: 31%;
-    }
-
-    .tshirts-image-1 {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin-top: -30px;
-      transition: all 1s ease-in-out;
-      transform: translate(-40%, 0);
-    }
-  }
-
-  .tshirts-right {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    width: 38vw;
-    height: 100vh;
-    text-align: right;
-
-    .bag-link {
-      top: 38%;
-      right: 31%;
-    }
-
-    .tshirts-image-2 {
-      width: auto;
-      height: 100vh;
-      transition: all 1s ease-in-out;
-      transform: translate(40%, 0);
-    }
-  }
-
-  .tshirts-circle-1,
-  .tshirts-pill-1,
-  .tshirts-pill-2,
-  .tshirts-worm-1,
-  .tshirts-worm-2 {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .tshirts-circle-1 {
-    bottom: 10vh;
-    right: 46vw;
-    width: 57px;
-  }
-
-  .tshirts-pill-1 {
-    bottom: 10vh;
-    left: 28vw;
-    width: 89px;
-  }
-
-  .tshirts-pill-2 {
-    bottom: 2vh;
-    left: 30vw;
-    width: 127px;
-  }
-
-  .tshirts-worm-1 {
-    top: 30vh;
-    right: 42vw;
-    width: 300px;
-  }
-
-  .tshirts-worm-2 {
-    bottom: 12vh;
-    right: 32vw;
-    width: 173px;
-  }
-
-  // Tshirts
-  .polos {
-    background-color: #45a8ad;
-
-    &.active-block {
-      .polos-image-1 {
-        -webkit-animation-duration: 1.5s;
-        animation-duration: 1.5s;
-        -webkit-animation-name: oneTwoOne;
-        animation-name: oneTwoOne;
-      }
-
-      .polos-image-2 {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
-  .polos-top {
-    position: absolute;
-    z-index: 2;
-    left: 30vw;
-    top: -65px;
-    width: 70vw;
-    text-align: left;
-
-    @media screen and (max-width: 1440px) {
-      top: -55px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      top: -45px;
-    }
-
-    .polos-title {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 30px;
-      color: #16284c;
-      font-family: $font-title;
-      font-size: 120px;
-      letter-spacing: -0.48px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 100px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 90px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 75px;
-      }
-    }
-
-    .butn-polos {
-      display: inline-block;
-      vertical-align: middle;
-      background-color: #ffc702;
-      color: #16284c;
-    }
-  }
-
-
-  .polos-left {
-    position: absolute;
-    top: 20vh;
-    left: 2vh;
-    width: 50vw;
-    z-index: 2;
-    
-    .bag-link {
-      bottom: 36%;
-      right: 33%;
-    }
-
-    .polos-image-1 {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .polos-right {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    text-align: right;
-
-    .bag-link {
-      top: 51%;
-      right: 30%;
-    }
-
-    .polos-image-2 {
-      display: block;
-      width: auto;
-      height: 100%;
-      transition: all 1s ease-in-out;
-      transform: translate(-60%, 0);
-    }
-  }
-
-  .polos-circle,
-  .polos-pill {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .polos-circle {
-    bottom: 4vh;
-    right: 38vw;
-    width: 57px;
-  }
-
-  .polos-pill {
-    top: 4vh;
-    left: 14vw;
-    width: 127px;
-  }
-
-  // Shirts
-  .shirts {
-    background-color: #ffc702;
-    z-index: 1;
-
-    &.active-block {
-      .shirts-image-1 {
-        transform: translate(0, 0);
-      }
-
-      .shirts-image-2 {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
-  .shirts-left {
-    position: absolute;
-    z-index: 1;
-    width: 60vw;
-    top: 6vh;
-    left: 3vw;
-
-    @media screen and (max-width: 1024px) {
-      top: 17vh;
-    }
-
-    .bag-link {
-      top: 36%;
-      right: 39%;
-    }
-
-    .shirts-image-1 {
-      display: block;
-      width: 100%;
-      transition: all 1s ease-in-out;
-      transform: translate(0, -50%);
-    }
-  }
-
-  .shirts-top {
-    position: absolute;
-    z-index: 9;
-    left: 10vw;
-    bottom: -70px;
-    display: block;
-    width: 86vw;
-    text-align: left;
+    top: 160px;
+    left: 115px;
+    width: 480px;
 
     @media screen and (max-width: 1680px) {
-      bottom: -60px;
-    }
-
-    @media screen and (max-width: 1440px) {
-      bottom: -50px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      top: -40px;
-    }
-
-    .shirts-title {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 30px;
-      color: #16284c;
-      font-family: $font-title;
-      font-size: 120px;
-      letter-spacing: -0.48px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 100px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 90px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 75px;
-      }
-    }
-
-    .butn-shirts {
-      display: inline-block;
-      vertical-align: middle;
-      background-color: #ff6750;
-      color: #16284c;
-    }
-  }
-
-  .shirts-right {
-    position: absolute;
-    z-index: 1;
-    width: 36vw;
-    top: 20vh;
-    right: 6vw;
-
-    @media screen and (max-width: 1024px) {
-      top: 26vh;
-    }
-
-    .bag-link {
-      bottom: 38%;
-      left: 18%;
-    }
-
-    .shirts-image-2 {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 1s ease-in-out;
-      transform: translate(0, -10%);
-    }
-  }
-
-  .shirts-circle,
-  .shirts-pill-1,
-  .shirts-pill-2,
-  .shirts-worm {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .shirts-circle {
-    top: 12vh;
-    right: 21vw;
-    width: 57px;
-  }
-
-  .shirts-pill-1 {
-    bottom: 8vh;
-    left: 6vw;
-    width: 89px;
-  }
-
-  .shirts-pill-2 {
-    bottom: 4vh;
-    left: -1vw;
-    width: 127px;
-  }
-
-  .shirts-worm {
-    top: -5vh;
-    right: 10vw;
-    width: 173px;
-  }
-
-
-  // shirts bottom
-  .shirts-bottom {
-    background-color: #ffc702;
-
-    &.active-block {
-      .shirts-bottom-image-1 {
-        transform: scale(1);
-      }
-    }
-  }
-
-  .shirts-bottom-left {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 84vw;
-
-    .bag-link {
-      top: 69%;
-      right: 43%;
-
-      @media screen and (max-width: 1680px) {
-        right: 37%;
-      }
-    }
-
-    .shirts-bottom-image-1 {
-      width: auto;
-      height: 100%;
-      transition: all 1s ease-in-out;
-      transform: scale(0.6);
-    }
-  }
-
-  .shirts-bottom-worm {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    top: 20vh;
-    right: 1vw;
-    width: 300px;
-    height: auto;
-  }
-
-  // Shorts
-  .shorts {
-    background-color: #ff6750;
-
-    &.active-block {
-      .shorts-image-1 {
-        transform: translate(0, 0);
-      }
-
-      .shorts-image-2 {
-        -webkit-animation-duration: 1.5s;
-        animation-duration: 1.5s;
-        -webkit-animation-name: oneTwoOne;
-        animation-name: oneTwoOne;
-      }
-    }
-  }
-
-  .shorts-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 50vw;
-    height: 100vh;
-
-    .bag-link {
-      right: 44%;
-      bottom: 30%;
-
-      @media screen and (max-width: 1680px) {
-        right: 50%;
-      }
-    }
-
-    .shorts-image-1 {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      display: block;
-      height: 100%;
-      width: auto;
-      transition: all 1s ease-in-out;
-      transform: translate(-20%, 0);
-    }
-  }
-
-  .shorts-right {
-    position: absolute;
-    right: 17vw;
-    bottom: 0;
-    width: 26vw;
-
-    .bag-link {
-      top: 53%;
-      left: 32%;
-    }
-
-    .shorts-image-2 {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .shorts-top {
-    display: block;
-    width: 60vw;
-    position: absolute;
-    z-index: 2;
-    left: -4vw;
-    top: -80px;
-    text-align: left;
-
-    @media screen and (max-width: 1680px) {
-      top: -70px;
-    }
-
-    @media screen and (max-width: 1440px) {
-      top: -60px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      top: -50px;
-    }
-
-    .shorts-title {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 30px;
-      color: #16284c;
-      font-family: $font-title;
-      font-size: 120px;
-      letter-spacing: -0.48px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 100px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 90px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 75px;
-      }
-    }
-
-    .butn-shorts {
-      display: inline-block;
-      vertical-align: middle;
-      background-color: #ffc702;
-      color: #16284c;
-    }
-  }
-
-  .shorts-circle,
-  .shorts-pill-1,
-  .shorts-pill-2 {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .shorts-circle {
-    bottom: 10vh;
-    right: 12vw;
-    width: 57px;
-  }
-
-  .shorts-pill-1 {
-    top: 42vh;
-    right: 3vw;
-    width: 89px;
-  }
-
-  .shorts-pill-2 {
-    top: 32vh;
-    right: 4vw;
-    width: 127px;
-  }
-
-  // Pants
-  .pants {
-    background-color: #45a8ad;
-
-    &.active-block {
-      .pants-image-1,
-      .pants-image-2 {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
-  .pants-top {
-    display: block;
-    width: 80vw;
-    position: absolute;
-    z-index: 2;
-    left: 40px;
-    top: -80px;
-    text-align: left;
-
-    @media screen and (max-width: 1680px) {
-      top: -70px;
-    }
-
-    @media screen and (max-width: 1440px) {
-      top: -60px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      top: -50px;
-    }
-
-    .pants-title {
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 30px;
-      color: #ffc702;
-      font-family: $font-title;
-      font-size: 120px;
-      letter-spacing: -0.48px;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 100px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 90px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 75px;
-      }
-    }
-
-    .butn-pants {
-      display: inline-block;
-      vertical-align: middle;
-      background-color: #ff6750;
-      color: #ffc702;
-    }
-  }
-
-  .pants-left {
-    position: absolute;
-    z-index: 3;
-    left: 0;
-    bottom: 0;
-    width: 31vw;
-
-    .bag-link {
-      bottom: 23%;
-      right: 41%;
-    }
-
-    .pants-image-1 {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 1s ease-in-out;
-      transform: translate(-40%, 0);
-    }
-  }
-
-  .pants-right {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    width: 57vw;
-
-    .bag-link {
-      bottom: 26%;
-      left: 64%;
-      z-index: 4;
-    }
-
-    .pants-image-2 {
-      width: 100%;
-      position: relative;
-      z-index: 3;
-      transition: all 1.5s ease-in-out;
-      transform: translate(0, 20%);
-    }
-  }
-
-  .pants-circle,
-  .pants-worm-1,
-  .pants-worm-2 {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .pants-circle {
-    bottom: 4vh;
-    left: 38vw;
-    width: 57px;
-  }
-
-  .pants-worm-1 {
-    bottom: 10vh;
-    left: 50vw;
-    width: 170px;
-  }
-
-  .pants-worm-2 {
-    bottom: 3vh;
-    left: 55vw;
-    width: 170px;
-  }
-
-
-  // Others
-  .others {
-    position: relative;
-    background-color: #45a8ad;
-
-    &.active-block {
-      .others-image-1 {
-        transform: scale(1);
-      }
-
-      .others-image-2,
-      .others-image-3 {
-        transform: translate(0, 0);
-      }
-    }
-  }
-
-  .others-left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    width: 30vw;
-
-    .bag-link {
-      top: 45%;
-      left: 52%;
-    }
-
-    .others-image-1 {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 1s ease-in-out;
-      transform: scale(0.2);
-    }
-  }
-
-  .others-circle,
-  .others-pill-1,
-  .others-pill-2 {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .others-circle {
-    bottom: 2vh;
-    right: 31vw;
-    width: 92px;
-  }
-
-  .others-pill-1 {
-    top: 12vh;
-    left: 31vw;
-    width: 88px;
-  }
-
-  .others-pill-2 {
-    top: 3vh;
-    left: 28vw;
-    width: 127px;
-  }
-
-  .others-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    width: 55vw;
-
-    .bag-link {
-      top: 22%;
-      left: 28%;
-    }
-
-    .others-image-2 {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 1s ease-in-out;
-      transform: translate(0, 20%);
-    }
-  }
-
-  .others-right-2 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 25vw;
-
-    .bag-link {
-      top: 30%;
-      right: 23%;
-    }
-
-    .others-image-3 {
-      position: relative;
-      top: -40px;
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: all 1s ease-in-out;
-      transform: translate(0, 20%);
-    }
-  }
-
-  .others-description {
-    position: absolute;
-    left: 24vw;
-    bottom: 10vh;
-    z-index: 3;
-    width: 500px;
-    margin: 0 auto;
-    padding: 160px 90px;
-    background-color: #fff;
-
-    @media screen and (max-width: 1680px) {
-      padding: 100px 70px;
-      bottom: 12vh;
-    }
-
-    @media screen and (max-width: 1440px) {
-      width: 420px;
-      padding: 90px 60px;
-      bottom: 14vh;
-    }
-
-    @media screen and (max-width: 1280px) {
-      width: 350px;
-      padding: 70px 50px;
-    }
-
-    p {
-      color: #16284c;
-      font-family: $font;
-      font-size: 26px;
-      letter-spacing: -0.57px;
-      line-height: 1.3;
-
-      @media screen and (max-width: 1680px) {
-        font-size: 22px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        font-size: 20px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        font-size: 18px;
-      }
-    }
-  }
-
-  // Shorts
-  .footer-page {
-    background-color: #ff6750;
-    overflow: hidden;
-  }
-
-  .footer-page-left {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: 75vh;
-
-    .footer-page-image-1 {
-      display: block;
-      height: 100%;
-      width: auto;
-    }
-  }
-
-  .footer-page-content {
-    position: absolute;
-    top: 1vh;
-    right: -470px;
-    bottom: 0;
-    width: 600px;
-
-    @media screen and (max-width: 1680px) {
-      right: -420px;
-      width: 550px;
-    }
-
-    @media screen and (max-width: 1440px) {
-      right: -370px;
-      width: 500px;
-    }
-
-    @media screen and (max-width: 1280px) {
-      width: 450px;
-      right: -320px;
+      @include calcDesk(top, 160px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 480px);
     }
     
-    .footer-page-description {
-      width: 380px;
-      margin-top: 10%;
-      margin-bottom: 40px;
-      padding: 130px 140px 130px 120px;
-      background-color: #fff;
-
-      @media screen and (max-width: 1680px) {
-        padding: 100px 110px 100px 90px;
-      }
-
-      @media screen and (max-width: 1440px) {
-        padding: 90px 100px 90px 80px;
-      }
-
-      @media screen and (max-width: 1280px) {
-        padding: 70px 80px 70px 70px;
-      }
-
-      p {
-        color: #16284c;
-        font-family: $font;
-        font-size: 26px;
-        letter-spacing: -0.57px;
-        line-height: 1.3;
-
-        @media screen and (max-width: 1680px) {
-          font-size: 22px;
-        }
-
-        @media screen and (max-width: 1440px) {
-          font-size: 20px;
-        }
-
-        @media screen and (max-width: 1280px) {
-          font-size: 18px;
-        }
-      }
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 160px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 480px);
     }
-  }
 
-  .butn-bottom {
-    display: block;
-    width: 220px;
-    height: 75px;
-    margin: 0 auto;
-    border-radius: 46px;
-    background-color: #16284c;
-    color: #ffc702;
-    font-family: $font-title;
-    font-weight: 400;
-    font-size: 22px;
-    text-align: center;
-    line-height: 75px;
-
-    @media screen and (max-width: 1680px) {
-      width: 200px;
-      height: 65px;
-      border-radius: 36px;
-      font-size: 18px;
-      line-height: 65px;
-    }
-  }
-
-  .footer-page-worm-1,
-  .footer-page-worm-2 {
-    position: absolute;
-    z-index: 0;
-    display: block;
-    height: auto;
-  }
-
-  .footer-page-worm-1 {
-    top: -5vh;
-    right: 3vw;
-    width: 170px;
-  }
-
-  .footer-page-worm-2 {
-    top: 2vh;
-    right: -2vw;
-    width: 170px;
-  }
-
-  .carousel-text {
-    position: absolute;
-    bottom: 12vh;
-    width: 100vw;
-    height: 8vh;
-
-    .swiper-wrapper {
-      display: flex;
-      .swiper-slide {
-        width: 100vw;
-        flex-shrink: 0;
-      }
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 160px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 480px);
     }
 
     @media screen and (max-width: 1024px) {
-      bottom: 7vh;
-    }
-
-    .carousel-title {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      padding-left: 5vw;
-      padding-right: 5vw;
-      color: #ffc702;
-      font-family: $font-title;
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 80px;
-      letter-spacing: -0.31px;
-      opacity: 0.3;
-      transition: all 1s ease;
-
-      @media screen and (max-width: 1280px) {
-        font-size: 24px;
-      }
-
-      &.swiper-slide-active{
-        opacity: 1;
-      }
+      @include calcTablet(top, 160px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 480px);
     }
   }
 
-  // Animations
-  @keyframes oneTwoOne {
-    10% {
-      transform: translateX(0);
+  .tshirts-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 50px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+  
+  .tshirts-paragraph {
+    width: 380px;
+    opacity: 0;
+    @include transition(opacity 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
     }
 
-    30% {
-      transform: translate(10%);
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 380px);
     }
     
-    100% {
-      transform: translateX(0);
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 380px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 380px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 380px);
+    }
+  }
+
+  .tshirts-img-2 {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 77px;
+    right: -97px;
+    width: 443px;
+    height: 660px;
+    background: transparent url('./images/tshirts-2.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: -443px 0px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
+      background-position: 0px 0px;
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 77px);
+      @include calcDesk(right, -97px);
+      @include calcDesk(width, 443px);
+      @include calcDesk(height, 663px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 77px);
+      @include calcLaptop(right, -97px);
+      @include calcLaptop(width, 443px);
+      @include calcLaptop(height, 663px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 77px);
+      @include calcSmallLaptop(right, -97px);
+      @include calcSmallLaptop(width, 443px);
+      @include calcSmallLaptop(height, 663px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 77px);
+      @include calcTablet(right, -97px);
+      @include calcTablet(width, 443px);
+      @include calcTablet(height, 663px);
+    }
+  }
+
+  .tshirts-img-3 {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 547px;
+    right: -255px;
+    width: 334px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(100%, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 547px);
+      @include calcDesk(right, -255px);
+      @include calcDesk(width, 334px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 547px);
+      @include calcLaptop(right, -255px);
+      @include calcLaptop(width, 334px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 547px);
+      @include calcSmallLaptop(right, -255px);
+      @include calcSmallLaptop(width, 334px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 547px);
+      @include calcTablet(right, -255px);
+      @include calcTablet(width, 334px);
     }
   }
 }
+
+// SHORTS
+.shorts {
+  position: relative;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+  
+  .rm-cta {
+    position: absolute;
+    top: 260px;
+    left: 755px;
+    width: 540px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 260px);
+      @include calcDesk(left, 755px);
+      @include calcDesk(width, 540px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 260px);
+      @include calcLaptop(left, 755px);
+      @include calcLaptop(width, 540px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 260px);
+      @include calcSmallLaptop(left, 755px);
+      @include calcSmallLaptop(width, 540px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 260px);
+      @include calcTablet(left, 755px);
+      @include calcTablet(width, 540px);
+    }
+  }
+
+  .shorts-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(200px, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .shorts-paragraph {
+    opacity: 0;
+    @include transition(opacity 0.6s ease-in-out);
+    width: 420px;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 420px);
+    }
+    
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 420px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 420px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 420px);
+    }
+  }
+  
+  .shorts-img-1 {
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: 115px;
+    width: 553px;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 200px));
+
+    &.active {
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, -60px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 553px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, -60px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, -60px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, -60px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 553px);
+    }
+  }
+
+  .shorts-img-2 {
+    display: block;
+    position: absolute;
+    top: 420px;
+    right: 0px;
+    width: 518px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(518px, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 420px);
+      @include calcDesk(width, 518px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 420px);
+      @include calcLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 420px);
+      @include calcSmallLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 420px);
+      @include calcTablet(width, 518px);
+    }
+  }
+}
+
+// SHOES
+.shoes {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-shoes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 83%;
+
+  .shoes-img-1 {
+    display: block;
+    width: 100%;
+  }
+
+  .rm-cta {
+    position: absolute;
+    top: 254px;
+    left: 710px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 254px);
+      @include calcDesk(left, 710px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 254px);
+      @include calcLaptop(left, 710px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 254px);
+      @include calcSmallLaptop(left, 710px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 254px);
+      @include calcTablet(left, 710px);
+    }
+  }
+
+  .shoes-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-100px, 100px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .shoes-paragraph {
+    width: 300px;
+    margin-left: 275px;
+    opacity: 0;
+    @include transition(opacity 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 300px);
+      @include calcDesk(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 300px);
+      @include calcLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 300px);
+      @include calcSmallLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 300px);
+      @include calcTablet(margin-left, 275px);
+    }
+  }
+
+  .rm-btn {
+    margin-left: 275px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-left, 275px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-left, 275px);
+    }
+  }
+
+  .shoes-img-2 {
+    position: absolute;
+    z-index: 2;
+    top: 120px;
+    left: -300px;
+    display: block;
+    width: 938px;
+    height: 650px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-300px, 300px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 120px);
+      @include calcDesk(left, -300px);
+      @include calcDesk(width, 938px);
+      @include calcDesk(height, 650px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 120px);
+      @include calcLaptop(left, -300px);
+      @include calcLaptop(width, 938px);
+      @include calcLaptop(height, 650px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 120px);
+      @include calcSmallLaptop(left, -300px);
+      @include calcSmallLaptop(width, 938px);
+      @include calcSmallLaptop(height, 650px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 120px);
+      @include calcTablet(left, -300px);
+      @include calcTablet(width, 938px);
+      @include calcTablet(height, 650px);
+    }
+  }
+
+  .shoes-img-3 {
+    position: absolute;
+    z-index: 2;
+    top: 400px;
+    left: 400px;
+    display: block;
+    width: 539px;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 200px));
+
+    &.active {
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 400px);
+      @include calcDesk(left, 400px);
+      @include calcDesk(width, 539px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 400px);
+      @include calcLaptop(left, 400px);
+      @include calcLaptop(width, 539px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 400px);
+      @include calcSmallLaptop(left, 400px);
+      @include calcSmallLaptop(width, 539px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 400px);
+      @include calcTablet(left, 400px);
+      @include calcTablet(width, 539px);
+    }
+  }
+}
+
+// BABIES
+.babies {
+  position: relative;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+  
+  .rm-cta {
+    position: relative;
+    top: 240px;
+    margin: 0 auto;
+    width: 396px;
+    text-align: center;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 240px);
+      @include calcDesk(width, 432px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 240px);
+      @include calcLaptop(width, 432px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 240px);
+      @include calcSmallLaptop(width, 432px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 240px);
+      @include calcTablet(width, 432px);
+    }
+  }
+  
+  .babies-title,
+  .babies-paragraph {
+    opacity: 0;
+    @include transition(opacity 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
+    }
+  }
+  
+  .babies-img-1 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 115px;
+    width: 367px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-100%, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 100px);
+      @include calcDesk(left, 115px);
+      @include calcDesk(width, 293px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 100px);
+      @include calcLaptop(left, 115px);
+      @include calcLaptop(width, 293px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 100px);
+      @include calcSmallLaptop(left, 115px);
+      @include calcSmallLaptop(width, 293px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 100px);
+      @include calcTablet(left, 115px);
+      @include calcTablet(width, 293px);
+    }
+  }
+
+  .babies-img-2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 400px;
+    left: 365px;
+    width: 309px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(100%, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 400px);
+      @include calcDesk(left, 365px);
+      @include calcDesk(width, 309px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 400px);
+      @include calcLaptop(left, 365px);
+      @include calcLaptop(width, 309px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 400px);
+      @include calcSmallLaptop(left, 365px);
+      @include calcSmallLaptop(width, 309px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 400px);
+      @include calcTablet(left, 365px);
+      @include calcTablet(width, 309px);
+    }
+  }
+
+  .babies-img-3 {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    width: 640px;
+    height: 758px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+
+    &.active {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 100px);
+      @include calcDesk(right, 40px);
+      @include calcDesk(width, 640px);
+      @include calcDesk(height, 758px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 100px);
+      @include calcLaptop(right, 40px);
+      @include calcLaptop(width, 640px);
+      @include calcLaptop(height, 758px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 100px);
+      @include calcSmallLaptop(right, 40px);
+      @include calcSmallLaptop(width, 640px);
+      @include calcSmallLaptop(height, 758px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 100px);
+      @include calcTablet(right, 40px);
+      @include calcTablet(width, 640px);
+      @include calcTablet(height, 758px);
+    }
+  }
+}
+
+// SHIRTS
+.shirts {
+  display: block;
+  width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-shirts {
+  position: relative;
+  display: block;
+  width: 63%;
+  height: 100%;
+
+  .shirts-img-1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .rm-cta {
+    position: absolute;
+    top: 340px;
+    left: 285px;
+    width: 560px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 340px);
+      @include calcDesk(left, 285px);
+      @include calcDesk(width, 560px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 340px);
+      @include calcLaptop(left, 285px);
+      @include calcLaptop(width, 560px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 340px);
+      @include calcSmallLaptop(left, 285px);
+      @include calcSmallLaptop(width, 560px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 340px);
+      @include calcTablet(left, 285px);
+      @include calcTablet(width, 560px);
+    }
+  }
+
+  .shirts-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 50px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .shirts-paragraph {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 50px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .shirts-img-2 {
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+    right: -350px;
+    display: block;
+    width: 700px;
+    height: 860px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 150px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 40px);
+      @include calcDesk(right, -350px);
+      @include calcDesk(width, 700px);
+      @include calcDesk(height, 860px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 40px);
+      @include calcLaptop(right, -350px);
+      @include calcLaptop(width, 700px);
+      @include calcLaptop(height, 860px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 40px);
+      @include calcSmallLaptop(right, -350px);
+      @include calcSmallLaptop(width, 700px);
+      @include calcSmallLaptop(height, 860px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 40px);
+      @include calcTablet(right, -350px);
+      @include calcTablet(width, 700px);
+      @include calcTablet(height, 860px);
+    }
+  }
+}
+
+// SHORTS
+.pants {
+  position: relative;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+  
+  .rm-cta {
+    position: relative;
+    top: 260px;
+    width: 380px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 260px);
+      @include calcDesk(width, 350px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 260px);
+      @include calcLaptop(width, 350px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 260px);
+      @include calcSmallLaptop(width, 350px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 260px);
+      @include calcTablet(width, 350px);
+    }
+  }
+
+  .pants-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 50px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .pants-paragraph {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 50px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+  
+  .pants-img-1 {
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 90px;
+    width: 553px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 150px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 90px);
+      @include calcDesk(left, 90px);
+      @include calcDesk(width, 553px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 90px);
+      @include calcLaptop(left, 90px);
+      @include calcLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 90px);
+      @include calcSmallLaptop(left, 90px);
+      @include calcSmallLaptop(width, 553px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 90px);
+      @include calcTablet(left, 90px);
+      @include calcTablet(width, 553px);
+    }
+  }
+
+  .pants-img-2 {
+    display: block;
+    position: absolute;
+    top: -60px;
+    right: 115px;
+    width: 518px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(0, 150px));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, -60px);
+      @include calcDesk(right, 115px);
+      @include calcDesk(width, 518px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, -60px);
+      @include calcLaptop(right, 115px);
+      @include calcLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, -60px);
+      @include calcSmallLaptop(right, 115px);
+      @include calcSmallLaptop(width, 518px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, -60px);
+      @include calcTablet(right, 115px);
+      @include calcTablet(width, 518px);
+    }
+  }
+}
+
+// SHOES
+.coats {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1000px;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(height, 1000px);
+  }
+  
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(height, 1000px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(height, 1000px);
+  }
+}
+
+.bg-coats {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 80%;
+
+  .coats-img-1 {
+    display: block;
+    width: 100%;
+  }
+
+  .rm-cta {
+    position: absolute;
+    top: 254px;
+    left: 410px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 254px);
+      @include calcDesk(left, 410px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 254px);
+      @include calcLaptop(left, 410px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 254px);
+      @include calcSmallLaptop(left, 410px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 254px);
+      @include calcTablet(left, 410px);
+    }
+  }
+
+  .coats-title {
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(50px, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+  }
+
+  .coats-paragraph {
+    width: 348px;
+    font-size: 30px;
+    opacity: 0;
+    @include transition(opacity 1s ease-in-out);
+
+    &.active {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(width, 360px);
+      @include calcDesk(font-size, 30px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(width, 360px);
+      @include calcLaptop(font-size, 30px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(width, 360px);
+      @include calcSmallLaptop(font-size, 30px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(width, 360px);
+      @include calcTablet(font-size, 30px);
+    }
+  }
+
+  .coats-img-2 {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 120px;
+    left: -180px;
+    width: 501px;
+    opacity: 0;
+    @include transition(all 0.6s ease-in-out);
+    @include transform(translate(-100%, 0));
+
+    &.active {
+      opacity: 1;
+      @include transform(translate(0, 0));
+    }
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 120px);
+      @include calcDesk(left, -180px);
+      @include calcDesk(width, 501px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 120px);
+      @include calcLaptop(left, -180px);
+      @include calcLaptop(width, 501px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 120px);
+      @include calcSmallLaptop(left, -180px);
+      @include calcSmallLaptop(width, 501px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 120px);
+      @include calcTablet(left, -180px);
+      @include calcTablet(width, 501px);
+    }
+  }
+}
+
+// SOCIAL MEDIA
+.social-media {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.col-social-media {
+  text-align: center;
+
+  &:first-child {
+    margin-right: 100px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-right, 100px);
+    }
+  }
+
+  &:last-child {
+    margin-left: 100px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(margin-right, 100px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(margin-right, 100px);
+    }
+  }
+}
+
+.rm-title-social {
+  display: block;
+  margin-bottom: 80px;
+  color: #090088;
+  font-family: $font;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: 13px;
+  text-transform: uppercase;
+  opacity: 0;
+  @include transition(all 0.6s ease-in-out);
+  @include transform(translate(100%, 0));
+
+  &.active {
+    opacity: 1;
+    @include transform(translate(0, 0));
+  }
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(margin-bottom, 100px);
+    @include calcDesk(font-size, 36px);
+    @include calcDesk(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(margin-bottom, 100px);
+    @include calcLaptop(font-size, 36px);
+    @include calcLaptop(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(margin-bottom, 100px);
+    @include calcSmallLaptop(font-size, 36px);
+    @include calcSmallLaptop(letter-spacing, 13px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(margin-bottom, 100px);
+    @include calcTablet(font-size, 36px);
+    @include calcTablet(letter-spacing, 13px);
+  }
+}
+
+.rm-spotify,
+.rm-instagram {
+  display: block;
+  width: 440px;
+  margin-bottom: 60px;
+  background-color: #7F7F7F;
+
+  @media screen and (max-width: 1680px) {
+    @include calcDesk(width, 440px);
+    @include calcDesk(height, 440px);
+    @include calcDesk(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1440px) {
+    @include calcLaptop(width, 440px);
+    @include calcLaptop(height, 440px);
+    @include calcLaptop(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1280px) {
+    @include calcSmallLaptop(width, 440px);
+    @include calcSmallLaptop(height, 440px);
+    @include calcSmallLaptop(margin-bottom, 60px);
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include calcTablet(width, 440px);
+    @include calcTablet(height, 440px);
+    @include calcTablet(margin-bottom, 60px);
+  }
+}
+
+
+
+
+
+
 
