@@ -81,8 +81,15 @@ $font: 'DIN Next LT Pro', sans-serif;
 }
 
 // General
-.reserva-mini-inverno * {
-  font-family: $font;
+.reserva-mini-inverno {
+  background-color: #F1F1F1;
+
+  * {
+    font-family: $font;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 .rm-title {
@@ -188,28 +195,28 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(width, 235px);
     @include calcDesk(height, 58px);
-    @include calcDesk(font-size, 30px);
+    @include calcDesk(font-size, 23px);
     @include calcDesk(line-height, 61px);
   }
 
   @media screen and (max-width: 1440px) {
     @include calcLaptop(width, 235px);
     @include calcLaptop(height, 58px);
-    @include calcLaptop(font-size, 30px);
+    @include calcLaptop(font-size, 23px);
     @include calcLaptop(line-height, 61px);
   }
 
   @media screen and (max-width: 1280px) {
     @include calcSmallLaptop(width, 235px);
     @include calcSmallLaptop(height, 58px);
-    @include calcSmallLaptop(font-size, 30px);
+    @include calcSmallLaptop(font-size, 23px);
     @include calcSmallLaptop(line-height, 61px);
   }
 
   @media screen and (max-width: 1024px) {
     @include calcTablet(width, 235px);
     @include calcTablet(height, 58px);
-    @include calcTablet(font-size, 30px);
+    @include calcTablet(font-size, 23px);
     @include calcTablet(line-height, 61px);
   }
 }
@@ -238,33 +245,33 @@ $font: 'DIN Next LT Pro', sans-serif;
   clear: both;
   position: relative;
   z-index: 2;
-  height: 500px;
+  height: 570px;
   width: 100%;
 
   @media screen and (max-width: 1680px) {
-    @include calcDesk(height, 500px);
+    @include calcDesk(height, 570px);
   }
   
   @media screen and (max-width: 1440px) {
-    @include calcLaptop(height, 500px);
+    @include calcLaptop(height, 570px);
   }
 
   @media screen and (max-width: 1280px) {
-    @include calcSmallLaptop(height, 500px);
+    @include calcSmallLaptop(height, 570px);
   }
 
   @media screen and (max-width: 1024px) {
-    @include calcTablet(height, 500px);
+    @include calcTablet(height, 570px);
   }
 }
 
 .super-title {
   position: absolute;
   left: 115px;
-  top: -196px;
+  top: -238px;
   color: #090088;
   font-family: $font;
-  font-size: 190px;
+  font-size: 240px;
   line-height: 1;
   letter-spacing: -3px;
   text-transform: uppercase;
@@ -275,23 +282,23 @@ $font: 'DIN Next LT Pro', sans-serif;
   }
 
   @media screen and (max-width: 1680px) {
-    @include calcDesk(top, -170px);
-    @include calcDesk(font-size, 160px);
+    @include calcDesk(top, -238px);
+    @include calcDesk(font-size, 240px);
   }
 
   @media screen and (max-width: 1440px) {
-    @include calcLaptop(top, -170px);
-    @include calcLaptop(font-size, 160px);
+    @include calcLaptop(top, -238px);
+    @include calcLaptop(font-size, 240px);
   }
 
   @media screen and (max-width: 1280px) {
-    @include calcSmallLaptop(top, -175px);
-    @include calcSmallLaptop(font-size, 160px);
+    @include calcSmallLaptop(top, -238px);
+    @include calcSmallLaptop(font-size, 240px);
   }
 
   @media screen and (max-width: 1024px) {
-    @include calcTablet(top, -186px);
-    @include calcTablet(font-size, 160px);
+    @include calcTablet(top, -238px);
+    @include calcTablet(font-size, 240px);
   }
 }
 
@@ -330,40 +337,81 @@ $font: 'DIN Next LT Pro', sans-serif;
 
 .intro-paragraph {
   position: absolute;
-  top: 211px;
-  right: 211px;
-  width: 730px;
+  top: 295px;
+  left: 1080px;
+  width: 605px;
 
   @media screen and (max-width: 1680px) {
-    top: 155px;
-    @include calcDesk(right, 115px);
-    @include calcDesk(width, 730px);
+    @include calcDesk(top, 295px);
+    @include calcDesk(left, 1080px);
+    @include calcDesk(width, 605px);
   }
   
   @media screen and (max-width: 1440px) {
-    top: 135px;
-    @include calcLaptop(right, 115px);
-    @include calcLaptop(width, 730px);
+    top: 219px;
+    @include calcLaptop(left, 1080px);
+    @include calcLaptop(width, 605px);
   }
 
   @media screen and (max-width: 1280px) {
-    top: 110px;
-    @include calcSmallLaptop(right, 115px);
-    @include calcSmallLaptop(width, 730px);
+    top: 194px;
+    @include calcSmallLaptop(left, 1080px);
+    @include calcSmallLaptop(width, 605px);
   }
 
   @media screen and (max-width: 1024px) {
-    top: 90px;
-    @include calcTablet(right, 115px);
-    @include calcTablet(width, 730px);
+    top: 159px;
+    @include calcTablet(left, 1080px);
+    @include calcTablet(width, 605px);
   }
 }
 
 // TSHIRTS
 .tshirts {
-  display: block;
+  position: relative;
   width: 100%;
   height: 1000px;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 130px;
+    right: 261px;
+    width: 673px;
+    height: 1376px;
+    background: url('./images/bg-tshirts.png') center center no-repeat transparent;
+    background-size: contain;
+    transform: rotate(47deg);
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(top, 130px);
+      @include calcDesk(right, 261px);
+      @include calcDesk(width, 673px);
+      @include calcDesk(height, 1376px);
+    }
+    
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(top, 130px);
+      @include calcLaptop(right, 261px);
+      @include calcLaptop(width, 673px);
+      @include calcLaptop(height, 1376px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(top, 130px);
+      @include calcSmallLaptop(right, 261px);
+      @include calcSmallLaptop(width, 673px);
+      @include calcSmallLaptop(height, 1376px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(top, 130px);
+      @include calcTablet(right, 261px);
+      @include calcTablet(width, 673px);
+      @include calcTablet(height, 1376px);
+    }
+  }
 
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
@@ -555,6 +603,8 @@ $font: 'DIN Next LT Pro', sans-serif;
 .shorts {
   position: relative;
   height: 1000px;
+  background: url('./images/bg-shorts.png') center center no-repeat transparent;
+  background-size: contain;
 
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
@@ -929,6 +979,8 @@ $font: 'DIN Next LT Pro', sans-serif;
 .babies {
   position: relative;
   height: 1000px;
+  background: url('./images/bg-babies.png') center center no-repeat transparent;
+  background-size: contain;
 
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
@@ -1249,6 +1301,8 @@ $font: 'DIN Next LT Pro', sans-serif;
 .pants {
   position: relative;
   height: 1000px;
+  background: url('./images/bg-shorts.png') center center no-repeat transparent;
+  background-size: contain;
 
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
@@ -1547,7 +1601,29 @@ $font: 'DIN Next LT Pro', sans-serif;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 100px;
+  padding: 100px 0;
+  background: url('./images/bg-babies.png') center center no-repeat transparent;
+  background-size: contain;
+
+  .rm-btn {
+    font-size: 20px;
+
+    @media screen and (max-width: 1680px) {
+      @include calcDesk(font-size, 20px);
+    }
+
+    @media screen and (max-width: 1440px) {
+      @include calcLaptop(font-size, 20px);
+    }
+
+    @media screen and (max-width: 1280px) {
+      @include calcSmallLaptop(font-size, 20px);
+    }
+
+    @media screen and (max-width: 1024px) {
+      @include calcTablet(font-size, 20px);
+    }
+  }
 }
 
 .col-social-media {
@@ -1669,10 +1745,5 @@ $font: 'DIN Next LT Pro', sans-serif;
     @include calcTablet(margin-bottom, 60px);
   }
 }
-
-
-
-
-
 
 
