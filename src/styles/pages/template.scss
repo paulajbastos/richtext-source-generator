@@ -1,35 +1,35 @@
-@font-face {
-  font-family: 'DIN Next LT Pro';
-  src: url('./fonts/DINNextLTPro-Medium.eot');
-  src: url('./fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
-      url('./fonts/DINNextLTPro-Medium.ttf') format('truetype'),
-      url('./fonts/DINNextLTPro-Medium.svg#DINNextLTPro-Medium') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'DIN Next LT Pro';
+//   src: url('./fonts/DINNextLTPro-Medium.eot');
+//   src: url('./fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+//       url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
+//       url('./fonts/DINNextLTPro-Medium.ttf') format('truetype'),
+//       url('./fonts/DINNextLTPro-Medium.svg#DINNextLTPro-Medium') format('svg');
+//   font-weight: 500;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'DIN Next LT Pro';
-  src: url('./fonts/DINNextLTPro-Bold.eot');
-  src: url('./fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/DINNextLTPro-Bold.woff') format('woff'),
-      url('./fonts/DINNextLTPro-Bold.ttf') format('truetype'),
-      url('./fonts/DINNextLTPro-Bold.svg#DINNextLTPro-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'DIN Next LT Pro';
+//   src: url('./fonts/DINNextLTPro-Bold.eot');
+//   src: url('./fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+//       url('./fonts/DINNextLTPro-Bold.woff') format('woff'),
+//       url('./fonts/DINNextLTPro-Bold.ttf') format('truetype'),
+//       url('./fonts/DINNextLTPro-Bold.svg#DINNextLTPro-Bold') format('svg');
+//   font-weight: bold;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'DIN Next LT Pro';
-  src: url('./fonts/DINNextLTPro-Light.eot');
-  src: url('./fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/DINNextLTPro-Light.woff') format('woff'),
-      url('./fonts/DINNextLTPro-Light.ttf') format('truetype'),
-      url('./fonts/DINNextLTPro-Light.svg#DINNextLTPro-Light') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'DIN Next LT Pro';
+//   src: url('./fonts/DINNextLTPro-Light.eot');
+//   src: url('./fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
+//       url('./fonts/DINNextLTPro-Light.woff') format('woff'),
+//       url('./fonts/DINNextLTPro-Light.ttf') format('truetype'),
+//       url('./fonts/DINNextLTPro-Light.svg#DINNextLTPro-Light') format('svg');
+//   font-weight: 300;
+//   font-style: normal;
+// }
 
 
 // Fonts
@@ -162,7 +162,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   }
 }
 
-.rm-btn {
+.rm-btn, a.rm-btn {
   display: inline-block;
   width: 275px;
   height: 58px;
@@ -251,7 +251,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 570px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 570px);
   }
@@ -346,7 +346,7 @@ $font: 'DIN Next LT Pro', sans-serif;
     @include calcDesk(left, 1080px);
     @include calcDesk(width, 605px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     top: 219px;
     @include calcLaptop(left, 1080px);
@@ -390,7 +390,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include calcDesk(width, 673px);
       @include calcDesk(height, 1376px);
     }
-    
+
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 130px);
       @include calcLaptop(right, 261px);
@@ -416,7 +416,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -451,7 +451,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include calcDesk(left, 115px);
       @include calcDesk(width, 480px);
     }
-    
+
     @media screen and (max-width: 1440px) {
       @include calcLaptop(top, 160px);
       @include calcLaptop(left, 115px);
@@ -481,7 +481,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include transform(translate(0, 0));
     }
   }
-  
+
   .tshirts-paragraph {
     width: 380px;
     opacity: 0;
@@ -494,7 +494,7 @@ $font: 'DIN Next LT Pro', sans-serif;
     @media screen and (max-width: 1680px) {
       @include calcDesk(width, 380px);
     }
-    
+
     @media screen and (max-width: 1440px) {
       @include calcLaptop(width, 380px);
     }
@@ -609,7 +609,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -621,7 +621,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1024px) {
     @include calcTablet(height, 1000px);
   }
-  
+
   .rm-cta {
     position: absolute;
     top: 260px;
@@ -676,7 +676,7 @@ $font: 'DIN Next LT Pro', sans-serif;
     @media screen and (max-width: 1680px) {
       @include calcDesk(width, 420px);
     }
-    
+
     @media screen and (max-width: 1440px) {
       @include calcLaptop(width, 420px);
     }
@@ -689,7 +689,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include calcTablet(width, 420px);
     }
   }
-  
+
   .shorts-img-1 {
     display: block;
     position: absolute;
@@ -775,7 +775,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -985,7 +985,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -997,7 +997,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1024px) {
     @include calcTablet(height, 1000px);
   }
-  
+
   .rm-cta {
     position: relative;
     top: 240px;
@@ -1025,7 +1025,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include calcTablet(width, 432px);
     }
   }
-  
+
   .babies-title,
   .babies-paragraph {
     opacity: 0;
@@ -1035,7 +1035,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       opacity: 1;
     }
   }
-  
+
   .babies-img-1 {
     display: block;
     position: absolute;
@@ -1171,7 +1171,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -1307,7 +1307,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
@@ -1319,7 +1319,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1024px) {
     @include calcTablet(height, 1000px);
   }
-  
+
   .rm-cta {
     position: relative;
     top: 260px;
@@ -1368,7 +1368,7 @@ $font: 'DIN Next LT Pro', sans-serif;
       @include transform(translate(0, 0));
     }
   }
-  
+
   .pants-img-1 {
     display: block;
     position: absolute;
@@ -1460,7 +1460,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   @media screen and (max-width: 1680px) {
     @include calcDesk(height, 1000px);
   }
-  
+
   @media screen and (max-width: 1440px) {
     @include calcLaptop(height, 1000px);
   }
