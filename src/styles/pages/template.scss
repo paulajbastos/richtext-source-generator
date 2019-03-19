@@ -1,35 +1,35 @@
-// @font-face {
-//   font-family: 'DIN Next LT Pro';
-//   src: url('./fonts/DINNextLTPro-Medium.eot');
-//   src: url('./fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
-//       url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
-//       url('./fonts/DINNextLTPro-Medium.ttf') format('truetype'),
-//       url('./fonts/DINNextLTPro-Medium.svg#DINNextLTPro-Medium') format('svg');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Medium.eot');
+  src: url('./fonts/DINNextLTPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Medium.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Medium.svg#DINNextLTPro-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'DIN Next LT Pro';
-//   src: url('./fonts/DINNextLTPro-Bold.eot');
-//   src: url('./fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
-//       url('./fonts/DINNextLTPro-Bold.woff') format('woff'),
-//       url('./fonts/DINNextLTPro-Bold.ttf') format('truetype'),
-//       url('./fonts/DINNextLTPro-Bold.svg#DINNextLTPro-Bold') format('svg');
-//   font-weight: bold;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Bold.eot');
+  src: url('./fonts/DINNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Bold.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Bold.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Bold.svg#DINNextLTPro-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'DIN Next LT Pro';
-//   src: url('./fonts/DINNextLTPro-Light.eot');
-//   src: url('./fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
-//       url('./fonts/DINNextLTPro-Light.woff') format('woff'),
-//       url('./fonts/DINNextLTPro-Light.ttf') format('truetype'),
-//       url('./fonts/DINNextLTPro-Light.svg#DINNextLTPro-Light') format('svg');
-//   font-weight: 300;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url('./fonts/DINNextLTPro-Light.eot');
+  src: url('./fonts/DINNextLTPro-Light.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/DINNextLTPro-Light.woff') format('woff'),
+      url('./fonts/DINNextLTPro-Light.ttf') format('truetype'),
+      url('./fonts/DINNextLTPro-Light.svg#DINNextLTPro-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
 
 
 // Fonts
@@ -236,8 +236,8 @@ $font: 'DIN Next LT Pro', sans-serif;
 .video-hero {
   display: block;
   position: absolute;
-  height: 84vh;
   width: 100%;
+  height: auto;
 }
 
 .intro {
@@ -245,7 +245,7 @@ $font: 'DIN Next LT Pro', sans-serif;
   clear: both;
   position: relative;
   z-index: 2;
-  height: 570px;
+  height: 630px;
   width: 100%;
 
   @media screen and (max-width: 1680px) {
@@ -268,7 +268,7 @@ $font: 'DIN Next LT Pro', sans-serif;
 .super-title {
   position: absolute;
   left: 115px;
-  top: -238px;
+  top: -178px;
   color: #090088;
   font-family: $font;
   font-size: 240px;
@@ -282,22 +282,22 @@ $font: 'DIN Next LT Pro', sans-serif;
   }
 
   @media screen and (max-width: 1680px) {
-    @include calcDesk(top, -238px);
+    @include calcDesk(top, -178px);
     @include calcDesk(font-size, 240px);
   }
 
   @media screen and (max-width: 1440px) {
-    @include calcLaptop(top, -238px);
+    @include calcLaptop(top, -178px);
     @include calcLaptop(font-size, 240px);
   }
 
   @media screen and (max-width: 1280px) {
-    @include calcSmallLaptop(top, -238px);
+    @include calcSmallLaptop(top, -178px);
     @include calcSmallLaptop(font-size, 240px);
   }
 
   @media screen and (max-width: 1024px) {
-    @include calcTablet(top, -238px);
+    @include calcTablet(top, -178px);
     @include calcTablet(font-size, 240px);
   }
 }
@@ -337,7 +337,7 @@ $font: 'DIN Next LT Pro', sans-serif;
 
 .intro-paragraph {
   position: absolute;
-  top: 295px;
+  top: 355px;
   left: 1080px;
   width: 605px;
 
