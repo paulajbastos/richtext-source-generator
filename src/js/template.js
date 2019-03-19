@@ -116,7 +116,7 @@ export default function template() {
 	});
 	*/
 
-  	$('.section-produtos-ofc').parallax({imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/foto_modelo.jpg'});
-	$('.zoom-div-ofc').parallax({imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-hero.jpg'});
+  	$('.section-produtos-ofc').parallax({imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/foto_modelo.jpg', mirrorContainer: '.body-ofc'});
+	$('.zoom-div-ofc').parallax({imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-hero.jpg', mirrorContainer: '.body-ofc'});
 
 }
