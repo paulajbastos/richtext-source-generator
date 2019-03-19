@@ -922,7 +922,7 @@ textarea.w-select {
   margin: auto;
   min-width: 100%;
   min-height: 100%;
-  z-index: -100;
+  z-index: 0;
 }
 .w-background-video > video::-webkit-media-controls-start-playback-button {
   display: none !important;
