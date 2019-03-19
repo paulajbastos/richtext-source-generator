@@ -376,37 +376,37 @@ $font: 'DIN Next LT Pro', sans-serif;
     display: block;
     content: '';
     position: absolute;
-    top: 130px;
+    top: 90px;
     right: 261px;
     width: 673px;
     height: 1376px;
     background: url('./images/bg-tshirts.png') center center no-repeat transparent;
     background-size: contain;
-    transform: rotate(47deg);
+    transform: rotate(52deg);
 
     @media screen and (max-width: 1680px) {
-      @include calcDesk(top, 130px);
+      @include calcDesk(top, 90px);
       @include calcDesk(right, 261px);
       @include calcDesk(width, 673px);
       @include calcDesk(height, 1376px);
     }
 
     @media screen and (max-width: 1440px) {
-      @include calcLaptop(top, 130px);
+      @include calcLaptop(top, 90px);
       @include calcLaptop(right, 261px);
       @include calcLaptop(width, 673px);
       @include calcLaptop(height, 1376px);
     }
 
     @media screen and (max-width: 1280px) {
-      @include calcSmallLaptop(top, 130px);
+      @include calcSmallLaptop(top, 90px);
       @include calcSmallLaptop(right, 261px);
       @include calcSmallLaptop(width, 673px);
       @include calcSmallLaptop(height, 1376px);
     }
 
     @media screen and (max-width: 1024px) {
-      @include calcTablet(top, 130px);
+      @include calcTablet(top, 90px);
       @include calcTablet(right, 261px);
       @include calcTablet(width, 673px);
       @include calcTablet(height, 1376px);
