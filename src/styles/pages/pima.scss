@@ -1,856 +1,862 @@
-.w-embed-youtubevideo {
-  width: 100%;
-  position: relative;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/youtube-placeholder.svg');
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-.w-embed-youtubevideo:empty {
-  min-height: 75px;
-  padding-bottom: 56.25%;
-}
-
-.navbar-ofc {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  display: block;
-  padding: 2vh 40px;
-  background-color: #fff;
-}
-
-.navbar-ofc.ofc {
-  z-index: 99999;
-  display: block;
-  padding-right: 4vh;
-  padding-left: 4vh;
-}
-
-.container-header-ofc {
-  display: block;
-  max-width: auto;
-}
-
-.nav-link {
-  padding: 12px 35px;
-  border: 2.4px solid #0020ea;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  font-family: Sairaextracondensed, sans-serif;
-  color: #0020ea;
-  font-size: 19.96px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.nav-link:hover {
-  background-color: #0020ea;
-  color: #fff;
-}
-
-.nav-link.botao-ofc {
-  top: 5px;
-}
-
-.nav-link.botao-ofc.w--current {
-  color: #0020ea;
-}
-
-.nav-link.botao-ofc.w--current:hover {
-  color: #fff;
-}
-
-.hero-ofc {
-  position: relative;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: visible;
-  width: auto;
-  height: 100vh;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.image {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.div-block-2 {
-  height: 100%;
-  max-width: 1920px;
-}
-
-.image-2 {
-  width: 100%;
-}
-
-.background-video {
-  height: 100vh;
-}
-
-.div-block-3 {
-  height: 100vh;
-  -webkit-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
-}
-
-.image-3 {
-  height: 100vh;
-}
-
-.zoom-div-ofc {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-
-.zoom-div-ofc.ofic {
-  
-}
-
-.div-play-ofc {
-  position: relative;
-  z-index: 99;
-  text-align: center;
-}
-
-.play {
-  position: relative;
-  z-index: 99;
-  display: block;
-  opacity: 1;
-}
-
-.play:hover {
-  opacity: 1;
-}
-
-.titulo-ofc {
-  margin-bottom: 80px;
-  font-family: Sairaextracondensed, sans-serif;
-  color: #fff;
-  font-size: 53px;
-  line-height: 57px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.titulo-ofc.black {
-  margin-bottom: 20px;
-  color: #000;
-}
-
-.titulo-ofc.black.white {
-  color: #fff;
-  line-height: 57px;
-}
-
-.titulo-ofc.black.produtos {
-  margin-top: 0px;
-  margin-bottom: 60px;
-}
-
-.link-play-ofc {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-  text-decoration: none;
-}
-
-.link-play-ofc:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-.div-block-6 {
-  overflow: hidden;
-}
-
-.div-block-hero-ofc {
-  position: relative;
-  z-index: 99;
-  text-align: center;
-}
-
-.sectiion-pima {
-  position: static;
-  height: 100vh;
-}
-
-.container {
-  max-width: 1200px;
-}
-
-.navbar-2 {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  padding-right: 40px;
-  padding-left: 40px;
-  background-color: transparent;
-}
-
-.bg-video-2-pima {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.div-block-pima {
-  color: #000;
-  text-align: center;
-}
-
-.div-block-pima.slider {
-  text-align: left;
-}
-
-.div-block-pima.div-block-manufatura {
-  text-align: left;
-}
-
-.div-block-pima.div-block-manufatura.div-block-caimento {
-  position: static;
-}
-
-.texto-ofc {
-  font-family: Sairaextracondensed, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.texto-ofc.texto-pima {
-  padding-right: 0%;
-  font-weight: 400;
-}
-
-.texto-ofc.texto-pima.white {
-  color: #fff;
-  line-height: 32px;
-  font-weight: 300;
-}
-
-.bg-slider-ofc {
-  height: 100vh;
-}
-
-.slide-ofc-1 {
-  height: 100vh;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-1.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
-.slider-ofc {
-  height: 100vh;
-}
-
-.icon {
-  font-size: 30px;
-}
-
-.icon-2 {
-  font-size: 30px;
-}
-
-.slide-nav-ofc {
-  font-size: 10px;
-}
-
-.slide-ofc-2 {
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/OFC_landing_pima_Carrosel2-1.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
-.slide-ofc-3 {
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-3.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.div-block-slider-ofc {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-left: 25vh;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.section-manufatura {
-  height: 100vh;
-  padding-right: 4vh;
-}
-
-.colunas-manu-ofc {
-  height: 100vh;
-}
-
-.coluna-dir-manu-ofc {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-right: 0px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.coluna-esq-manu-ofc {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-left: 25vh;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.div-imagem-manu-1 {
-  margin-bottom: 4vh;
-}
-
-.section-produtos-ofc {
-  height: 100vh;
-  /*
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/foto_modelo.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  background-attachment: fixed;
-  */
-}
-
-.div-block-extra-ofc {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding-right: 15vh;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.section-produtos {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 110vh;
-  padding-right: 25vh;
-  padding-left: 25vh;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.button-6 {
-  width: 100px;
-  margin-right: 5px;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  padding: 6px 10px;
-  border: 1px solid #000;
-  background-color: transparent;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-  font-family: 'Open Sans', sans-serif;
-  color: #000;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.button-6:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.heading-3 {
-  display: block;
-  margin: 0px 40px 0px 10px;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 auto;
-  -ms-flex: 0 auto;
-  flex: 0 auto;
-  border-bottom: 1px none rgba(0, 0, 0, .1);
-  font-family: 'Open Sans', sans-serif;
-  color: #000;
-  font-size: 32px;
-  font-weight: 200;
-  text-align: left;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.heading-3.heading-compre {
-  font-size: 53px;
-}
-
-.paragraph-7 {
-  display: inline-block;
-  margin-bottom: 0px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-
-.slider-3 {
-  display: block;
-}
-
-.div-block-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 40px;
-  padding-right: 0px;
-  padding-left: 0%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.div-block-27 {
-  text-align: center;
-}
-
-.link-block-camisa-4 {
-  margin-bottom: 10px;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043003040_01-1.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.link-prod-ofc {
-  font-family: 'Open Sans', sans-serif;
-  color: #000;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.link-prod-ofc:hover {
-  text-decoration: underline;
-}
-
-.heading-2 {
-  margin-top: 0px;
-  margin-bottom: 5px;
-  font-family: 'Open Sans', sans-serif;
-  color: #000;
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.preco-prod-ofc {
-  margin-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
-  color: #999;
-  font-size: 13px;
-  font-weight: 400;
-  text-align: center;
-}
-
-.coluna-produto-ofc {
-  padding-right: 10px;
-  padding-left: 10px;
-  text-align: center;
-}
-
-.div-info-prod {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.link-block-camisas {
-  margin-bottom: 10px;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0042997040_01-1.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.div-block-produtos-ofc {
-  margin-bottom: 40px;
-  padding-top: 0px;
-  text-align: center;
-}
-
-.coluna-produto-ofc-1 {
-  padding-right: 10px;
-  padding-left: 10px;
-  text-align: center;
-}
-
-.link-block-camisas-2 {
-  margin-bottom: 10px;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043000040_01-1.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.image-4 {
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 6px 0 #fff;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
-.image-4:hover {
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/example-bg.png');
-  background-position: 0px 0px;
-  background-size: 125px;
-  box-shadow: none;
-  opacity: 1;
-}
-
-.link-block-camisa-3 {
-  margin-bottom: 10px;
-  background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043002040_01.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-.botao-ver-todos-ofc {
-  display: block;
-  margin-bottom: 0px;
-  padding: 12px 35px;
-  border: 2.4px solid #0020ea;
-  background-color: #fff;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  font-family: Sairaextracondensed, sans-serif;
-  color: #0020ea;
-  font-size: 19.96px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.botao-ver-todos-ofc:hover {
-  background-color: #0020ea;
-  color: #fff;
-}
-
-.botao-ver-todos-ofc.botao-white {
-  display: none;
-}
-
-.footer-section-ofc {
-  position: static;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  padding: 38px 4vh 34px;
-  background-color: #000;
-  color: #7e7c87;
-}
-
-.column-20 {
-  text-align: left;
-}
-
-.block-marca {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-  text-decoration: none;
-}
-
-.block-marca:hover {
-  opacity: 0.8;
-}
-
-.footer-info-ofc {
-  font-family: 'Open Sans', sans-serif;
-  color: #bbb;
-  font-size: 11px;
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.link {
-  margin: 5px;
-  color: #7e7c87;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.link:hover {
-  color: #dfdfdf;
-}
-
-.block-modal-video-ofc {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 888888;
-  display: none;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, .9);
-  text-align: center;
-}
-
-.link-2 {
-  display: block;
-  padding-top: 10px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  font-family: Ubuntu, Helvetica, sans-serif;
-  color: #fff;
-  text-align: right;
-  text-decoration: none;
-}
-
-.link-block {
-  position: absolute;
-}
-
-.text-span {
-  font-weight: 700;
-}
-
-.imagem-produto-ofc {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-.imagem-4-prod-ofc {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-.imagem-3-produto-ofc {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-.imagem-2-prod-ofc {
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-.background-video-mobi {
-  display: none;
-}
-
-.div-block-manu-mobi {
-  display: none;
-}
-
-.div-block-28 {
-  display: none;
-}
-
-.caimento-mobi {
-  display: none;
-}
-
-.image-6 {
-  position: relative;
-  top: 0vh;
-  z-index: 99;
-}
-
-.button-7 {
-  float: right;
-}
-
-.div-block-29 {
-  padding-right: 4vh;
-  padding-left: 4vh;
-}
-
-.navbar-3 {
-  padding: 2vh 4vh;
-  background-color: transparent;
-}
-
-.nav-link-2 {
-  top: 5px;
-  padding: 12px 35px;
-  border: 2.4px solid #fff;
-  font-family: Sairaextracondensed, sans-serif;
-  color: #fff;
-  font-size: 19.96px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.div-block-31 {
-  padding: 0vh 10vh 10vh;
-}
-
-.link-block-2 {
-  position: relative;
-  top: 10vh;
-}
-
-html.w-mod-js *[data-ix="text-effect"] {
-  opacity: 0;
-  -webkit-transform: translate(0px, 5px);
-  -ms-transform: translate(0px, 5px);
-  transform: translate(0px, 5px);
-}
-
-html.w-mod-js *[data-ix="text-effect-scroll"] {
-  opacity: 0;
-  -webkit-transform: translate(0px, 5px);
-  -ms-transform: translate(0px, 5px);
-  transform: translate(0px, 5px);
-}
-
-html.w-mod-js *[data-ix="text-effect-slow"] {
-  opacity: 0;
-  -webkit-transform: translate(0px, 5px);
-  -ms-transform: translate(0px, 5px);
-  transform: translate(0px, 5px);
-}
-
-html.w-mod-js *[data-ix="new-interaction-8"] {
-  opacity: 0;
-}
-
-html.w-mod-js *[data-ix="new-interaction-2"] {
-  opacity: 0;
-}
-
-html.w-mod-js *[data-ix="modal-interaction"] {
-  display: none;
-  opacity: 0;
-  -webkit-transform: scale(1.1, 1.1);
-  -ms-transform: scale(1.1, 1.1);
-  transform: scale(1.1, 1.1);
-}
-
-html.w-mod-js *[data-ix="new-interaction-10"] {
-  display: none;
-  opacity: 0;
-  -webkit-transform: translate(0px, -93px);
-  -ms-transform: translate(0px, -93px);
-  transform: translate(0px, -93px);
+.body-ofc{
+
+  .w-embed-youtubevideo {
+    width: 100%;
+    position: relative;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/youtube-placeholder.svg');
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .w-embed-youtubevideo:empty {
+    min-height: 75px;
+    padding-bottom: 56.25%;
+  }
+
+  .navbar-ofc {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    display: block;
+    padding: 2vh 40px;
+    background-color: #fff;
+  }
+
+  .navbar-ofc.ofc {
+    z-index: 99999;
+    display: block;
+    padding-right: 4vh;
+    padding-left: 4vh;
+  }
+
+  .container-header-ofc {
+    display: block;
+    max-width: auto;
+  }
+
+  .nav-link {
+    padding: 12px 35px;
+    border: 2.4px solid #0020ea;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    font-family: Sairaextracondensed, sans-serif;
+    color: #0020ea;
+    font-size: 19.96px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-link:hover {
+    background-color: #0020ea;
+    color: #fff;
+  }
+
+  .nav-link.botao-ofc {
+    top: 5px;
+  }
+
+  .nav-link.botao-ofc.w--current {
+    color: #0020ea;
+  }
+
+  .nav-link.botao-ofc.w--current:hover {
+    color: #fff;
+  }
+
+  .hero-ofc {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: visible;
+    width: auto;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .div-block-2 {
+    height: 100%;
+    max-width: 1920px;
+  }
+
+  .image-2 {
+    width: 100%;
+  }
+
+  .background-video {
+    height: 100vh;
+  }
+
+  .div-block-3 {
+    height: 100vh;
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+
+  .image-3 {
+    height: 100vh;
+  }
+
+  .zoom-div-ofc {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  .zoom-div-ofc.ofic {
+    
+  }
+
+  .div-play-ofc {
+    position: relative;
+    z-index: 99;
+    text-align: center;
+  }
+
+  .play {
+    position: relative;
+    z-index: 99;
+    display: block;
+    opacity: 1;
+  }
+
+  .play:hover {
+    opacity: 1;
+  }
+
+  .titulo-ofc {
+    margin-bottom: 80px;
+    font-family: Sairaextracondensed, sans-serif;
+    color: #fff;
+    font-size: 53px;
+    line-height: 57px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .titulo-ofc.black {
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .titulo-ofc.black.white {
+    color: #fff;
+    line-height: 57px;
+  }
+
+  .titulo-ofc.black.produtos {
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+
+  .link-play-ofc {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    text-decoration: none;
+  }
+
+  .link-play-ofc:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .div-block-6 {
+    overflow: hidden;
+  }
+
+  .div-block-hero-ofc {
+    position: relative;
+    z-index: 99;
+    text-align: center;
+  }
+
+  .sectiion-pima {
+    position: static;
+    height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .navbar-2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: transparent;
+  }
+
+  .bg-video-2-pima {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .div-block-pima {
+    color: #000;
+    text-align: center;
+  }
+
+  .div-block-pima.slider {
+    text-align: left;
+  }
+
+  .div-block-pima.div-block-manufatura {
+    text-align: left;
+  }
+
+  .div-block-pima.div-block-manufatura.div-block-caimento {
+    position: static;
+  }
+
+  .texto-ofc {
+    font-family: Sairaextracondensed, sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .texto-ofc.texto-pima {
+    padding-right: 0%;
+    font-weight: 400;
+  }
+
+  .texto-ofc.texto-pima.white {
+    color: #fff;
+    line-height: 32px;
+    font-weight: 300;
+  }
+
+  .bg-slider-ofc {
+    height: 100vh;
+  }
+
+  .slide-ofc-1 {
+    height: 100vh;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .slider-ofc {
+    height: 100vh;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+
+  .icon-2 {
+    font-size: 30px;
+  }
+
+  .slide-nav-ofc {
+    font-size: 10px;
+  }
+
+  .slide-ofc-2 {
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/OFC_landing_pima_Carrosel2-1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .slide-ofc-3 {
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-3.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .div-block-slider-ofc {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    padding-left: 25vh;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .section-manufatura {
+    height: 100vh;
+    padding-right: 4vh;
+  }
+
+  .colunas-manu-ofc {
+    height: 100vh;
+  }
+
+  .coluna-dir-manu-ofc {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    padding-right: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .coluna-esq-manu-ofc {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    padding-left: 25vh;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .div-imagem-manu-1 {
+    margin-bottom: 4vh;
+  }
+
+  .section-produtos-ofc {
+    height: 100vh;
+    /*
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/foto_modelo.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    */
+  }
+
+  .div-block-extra-ofc {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    padding-right: 15vh;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .section-produtos {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 110vh;
+    padding-right: 25vh;
+    padding-left: 25vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .button-6 {
+    width: 100px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding: 6px 10px;
+    border: 1px solid #000;
+    background-color: transparent;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .button-6:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .heading-3 {
+    display: block;
+    margin: 0px 40px 0px 10px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    border-bottom: 1px none rgba(0, 0, 0, .1);
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 32px;
+    font-weight: 200;
+    text-align: left;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .heading-3.heading-compre {
+    font-size: 53px;
+  }
+
+  .paragraph-7 {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  .slider-3 {
+    display: block;
+  }
+
+  .div-block-15 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 40px;
+    padding-right: 0px;
+    padding-left: 0%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .div-block-27 {
+    text-align: center;
+  }
+
+  .link-block-camisa-4 {
+    margin-bottom: 10px;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043003040_01-1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .link-prod-ofc {
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .link-prod-ofc:hover {
+    text-decoration: underline;
+  }
+
+  .heading-2 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .preco-prod-ofc {
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: #999;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .coluna-produto-ofc {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .div-info-prod {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .link-block-camisas {
+    margin-bottom: 10px;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0042997040_01-1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .div-block-produtos-ofc {
+    margin-bottom: 40px;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .coluna-produto-ofc-1 {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .link-block-camisas-2 {
+    margin-bottom: 10px;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043000040_01-1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .image-4 {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px 0 #fff;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+  }
+
+  .image-4:hover {
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/example-bg.png');
+    background-position: 0px 0px;
+    background-size: 125px;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .link-block-camisa-3 {
+    margin-bottom: 10px;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/0043002040_01.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .botao-ver-todos-ofc {
+    display: block;
+    margin-bottom: 0px;
+    padding: 12px 35px;
+    border: 2.4px solid #0020ea;
+    background-color: #fff;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    font-family: Sairaextracondensed, sans-serif;
+    color: #0020ea;
+    font-size: 19.96px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .botao-ver-todos-ofc:hover {
+    background-color: #0020ea;
+    color: #fff;
+  }
+
+  .botao-ver-todos-ofc.botao-white {
+    display: none;
+  }
+
+  .footer-section-ofc {
+    position: static;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 38px 4vh 34px;
+    background-color: #000;
+    color: #7e7c87;
+  }
+
+  .column-20 {
+    text-align: left;
+  }
+
+  .block-marca {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    text-decoration: none;
+  }
+
+  .block-marca:hover {
+    opacity: 0.8;
+  }
+
+  .footer-info-ofc {
+    font-family: 'Open Sans', sans-serif;
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .align-right {
+    text-align: right;
+  }
+
+  .link {
+    margin: 5px;
+    color: #7e7c87;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .link:hover {
+    color: #dfdfdf;
+  }
+
+  .block-modal-video-ofc {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 888888;
+    display: none;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .9);
+    text-align: center;
+  }
+
+  .link-2 {
+    display: block;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    font-family: Ubuntu, Helvetica, sans-serif;
+    color: #fff;
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .link-block {
+    position: absolute;
+  }
+
+  .text-span {
+    font-weight: 700;
+  }
+
+  .imagem-produto-ofc {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  .imagem-4-prod-ofc {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  .imagem-3-produto-ofc {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  .imagem-2-prod-ofc {
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  .background-video-mobi {
+    display: none;
+  }
+
+  .div-block-manu-mobi {
+    display: none;
+  }
+
+  .div-block-28 {
+    display: none;
+  }
+
+  .caimento-mobi {
+    display: none;
+  }
+
+  .image-6 {
+    position: relative;
+    top: 0vh;
+    z-index: 99;
+  }
+
+  .button-7 {
+    float: right;
+  }
+
+  .div-block-29 {
+    padding-right: 4vh;
+    padding-left: 4vh;
+  }
+
+  .navbar-3 {
+    padding: 2vh 4vh;
+    background-color: transparent;
+  }
+
+  .nav-link-2 {
+    top: 5px;
+    padding: 12px 35px;
+    border: 2.4px solid #fff;
+    font-family: Sairaextracondensed, sans-serif;
+    color: #fff;
+    font-size: 19.96px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .div-block-31 {
+    padding: 0vh 10vh 10vh;
+  }
+
+  .link-block-2 {
+    position: relative;
+    top: 10vh;
+  }
+
+  html.w-mod-js *[data-ix="text-effect"] {
+    opacity: 0;
+    -webkit-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+  }
+
+  html.w-mod-js *[data-ix="text-effect-scroll"] {
+    opacity: 0;
+    -webkit-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+  }
+
+  html.w-mod-js *[data-ix="text-effect-slow"] {
+    opacity: 0;
+    -webkit-transform: translate(0px, 5px);
+    -ms-transform: translate(0px, 5px);
+    transform: translate(0px, 5px);
+  }
+
+  html.w-mod-js *[data-ix="new-interaction-8"] {
+    opacity: 0;
+  }
+
+  html.w-mod-js *[data-ix="new-interaction-2"] {
+    opacity: 0;
+  }
+
+  html.w-mod-js *[data-ix="modal-interaction"] {
+    display: none;
+    opacity: 0;
+    -webkit-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+
+  html.w-mod-js *[data-ix="new-interaction-10"] {
+    display: none;
+    opacity: 0;
+    -webkit-transform: translate(0px, -93px);
+    -ms-transform: translate(0px, -93px);
+    transform: translate(0px, -93px);
+  }
+
 }
 
 @media (max-width: 991px) {
+  .body-ofc{
+
   .hero-ofc {
     margin-bottom: 10px;
   }
@@ -975,9 +981,12 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
     padding-right: 0vh;
     padding-left: 0vh;
   }
+  }
 }
 
 @media (max-width: 767px) {
+  .body-ofc{
+
   .nav-link.botao-ofc.w--current {
     padding-right: 25px;
     padding-left: 25px;
@@ -1110,9 +1119,12 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
   .caimento-mobi {
     display: block;
   }
+
+  }
 }
 
 @media (max-width: 479px) {
+  .body-ofc{
   .navbar-ofc.ofc {
     display: block;
     padding-right: 2vh;
@@ -1322,6 +1334,7 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+  }
   }
 }
 
