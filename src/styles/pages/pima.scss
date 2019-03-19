@@ -1,5 +1,11 @@
 .body-ofc{
 
+  img{
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
   .w-embed-youtubevideo {
     width: 100%;
     position: relative;
@@ -91,6 +97,8 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+
+    margin-bottom: -50px;
   }
 
   .image {
@@ -378,7 +386,7 @@
   }
 
   .div-imagem-manu-1 {
-    margin-bottom: 4vh;
+    //margin-bottom: 4vh;
   }
 
   .section-produtos-ofc {
@@ -852,17 +860,17 @@
 @media (max-width: 991px) {
 
   .hero-ofc {
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
   }
   .zoom-div-ofc.ofic {
     margin-bottom: 0px;
     background-attachment: scroll;
   }
   .sectiion-pima {
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
   }
   .bg-slider-ofc {
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
   }
   .coluna-esq-manu-ofc {
     padding-left: 4vh;
@@ -985,7 +993,7 @@
     font-size: 16px;
   }
   .hero-ofc {
-    margin-bottom: 4vh;
+    //margin-bottom: 4vh;
   }
   .titulo-ofc.black.white {
     text-align: center;
@@ -994,19 +1002,19 @@
     margin-bottom: 60px;
   }
   .sectiion-pima {
-    margin-bottom: 4vh;
+    //margin-bottom: 4vh;
   }
   .div-block-pima.div-block-manufatura {
     display: block;
   }
   .div-block-pima.div-block-manufatura.div-block-caimento {
-  
+   
   }
   .texto-ofc.texto-pima.white {
     text-align: center;
   }
   .bg-slider-ofc {
-    margin-bottom: 4vh;
+    //margin-bottom: 4vh;
   }
   .slide-ofc-1 {
     background-position: 69% 50%;
@@ -1124,6 +1132,11 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+
+  .div-block-caimento{
+    display: none;
+  }
+
   .nav-link.botao-ofc {
     top: 0px;
     padding-right: 20px;
@@ -1254,10 +1267,10 @@
     padding-bottom: 0px;
   }
   .seta-esq-ofc {
-    display: none;
+    //display: none;
   }
   .seta-direta-ofc {
-    display: none;
+    //display: none;
   }
   .div-block-manu-mobi {
     display: block;
