@@ -17,10 +17,8 @@
   }
 
   .navbar-ofc {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    right: 0px;
+    width:     100%;
+    
     display: block;
     padding: 2vh 40px;
     background-color: #fff;
@@ -852,10 +850,7 @@
     transform: translate(0px, -93px);
   }
 
-}
-
 @media (max-width: 991px) {
-  .body-ofc{
 
   .hero-ofc {
     margin-bottom: 10px;
@@ -981,11 +976,9 @@
     padding-right: 0vh;
     padding-left: 0vh;
   }
-  }
 }
 
 @media (max-width: 767px) {
-  .body-ofc{
 
   .nav-link.botao-ofc.w--current {
     padding-right: 25px;
@@ -1120,11 +1113,9 @@
     display: block;
   }
 
-  }
 }
 
 @media (max-width: 479px) {
-  .body-ofc{
   .navbar-ofc.ofc {
     display: block;
     padding-right: 2vh;
@@ -1335,7 +1326,8 @@
     -ms-flex-align: center;
     align-items: center;
   }
-  }
+}
+
 }
 
 @font-face {
