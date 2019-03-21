@@ -161,6 +161,10 @@ export default function template() {
         }
     });
     
+
+    $('video')[0].play();
+    $('video')[1].play();
+
     $('.section-produtos-ofc').parallax({ imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/'+imageBg, mirrorContainer: '.body-ofc' });
 	$('.zoom-div-ofc').parallax({imageSrc: 'https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-hero.jpg', mirrorContainer: '.body-ofc'});
 
