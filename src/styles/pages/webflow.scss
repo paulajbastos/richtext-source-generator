@@ -1597,6 +1597,7 @@ textarea.w-select {
   float: left;
   text-decoration: none;
   color: #333333;
+  margin-top: 10px;
 }
 .w-nav-link {
   position: relative;
@@ -1710,6 +1711,11 @@ textarea.w-select {
   }
   .w-nav[data-collapse="tiny"] .w-nav-button {
     display: block;
+  }
+
+  .w-background-video > video {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 .w-tabs {

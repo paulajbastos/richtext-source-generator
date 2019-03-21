@@ -27,7 +27,16 @@
     display: block;
     padding: 2vh 40px;
     background-color: #fff;
+    transition: transform 0.25s ease-in-out;
+    position: fixed;
+    top: 60px;
+    transform: translateY(-160px);    
+    &.header-pin{
+      transform: translateY(0px);
+    }
   }
+
+
 
   .navbar-ofc.ofc {
     z-index: 9;
@@ -284,11 +293,11 @@
   }
 
   .slide-ofc-1 {
-    height: 100vh;
+    br{
+      display: none;
+    }
     background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-1.jpg');
-    background-position: 50% 50%;
     background-size: cover;
-    background-attachment: scroll;
   }
 
   .slider-ofc {
@@ -309,14 +318,11 @@
 
   .slide-ofc-2 {
     background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/OFC_landing_pima_Carrosel2-1.jpg');
-    background-position: 50% 50%;
     background-size: cover;
-    background-attachment: scroll;
   }
 
   .slide-ofc-3 {
     background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/bg-slider-3.jpg');
-    background-position: 50% 50%;
     background-size: cover;
   }
 
@@ -386,7 +392,7 @@
   }
 
   .div-imagem-manu-1 {
-    //margin-bottom: 4vh;
+    margin-bottom: 4vh;
   }
 
   .section-produtos-ofc {
@@ -1021,15 +1027,32 @@
   }
   .bg-slider-ofc {
     //margin-bottom: 4vh;
+    h1{
+      font-size: 42px;
+      line-height: 46px !important;
+    }
+    h2{
+      width: 70%;
+      margin: 0 auto;
+      br{
+        display: none;
+      }
+    }
   }
   .slide-ofc-1 {
-    background-position: 69% 50%;
+    //background-position: 69% 50%;
+    background-position: center;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/[mobi]algodao-certificado.jpg');
   }
   .slide-ofc-2 {
-    background-position: 69% 50%;
+    //background-position: 69% 50%;    
+    background-position: center;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/[mobi]rustico-nobre.jpg');
   }
   .slide-ofc-3 {
-    background-position: 70% 50%;
+    //background-position: 70% 50%;
+    background-position: center;
+    background-image: url('https://imagens.usereserva.com.br/rsv_assets/oficina/outono-inverno-2019/images/[mobi]clima-estavel.jpg');    
   }
   .div-block-slider-ofc {
     padding-bottom: 8vh;
@@ -1304,6 +1327,7 @@
     width: 50%;
     padding-left: 0px;
     float: none;
+    margin-top: 0;
   }
   .navbar-3 {
     display: -webkit-box;
