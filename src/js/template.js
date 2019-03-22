@@ -144,6 +144,14 @@ export default function template() {
         }, 1500)
     });
 
+    $('#goToPima').on('click', function(event){
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#pima").offset().top
+        }, 1500)
+    });
+    
+
     var imageBg = '';
     
     if(isMobile.any()){
