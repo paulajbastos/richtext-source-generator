@@ -13,18 +13,17 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.23.6",
     "browserify": "^13.3.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-inline-source": "^3.2.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-remove-html-comments": "^1.0.1",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sequence": "^0.4.6",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^1.1.2"
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "del": "^3.0.0"

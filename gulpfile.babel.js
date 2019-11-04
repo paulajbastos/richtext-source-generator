@@ -7,7 +7,6 @@ import concat from 'gulp-concat';
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
-import gulpSequence from 'gulp-sequence';
 import plugins from 'gulp-load-plugins';
 
 const removeHtmlComments = require('gulp-remove-html-comments');
@@ -15,60 +14,43 @@ const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 const inlinesource = require('gulp-inline-source');
 const del = require('del');
+const fs = require('fs')
 
 const dirs = {
   src: './src',
   dist: './dist'
 };
 
-gulp.task('watch', function () {
-  browserSync.init({
-    server: `${dirs.dist}`,
-    serveStaticOptions: {
-      extensions: ['html']
-    }
-  });
 
-  gulp.watch(`${dirs.src}/*.html`, ['html']).on('change', browserSync.reload);
-  gulp.watch(`${dirs.src}/styles/**/*.scss`, ['watchCss']).on('change', browserSync.reload);
-  gulp.watch(`${dirs.src}/js/**/*.js`, ['watchJs']).on('change', browserSync.reload);
-});
+const html = (done) => {
+  if (fs.existsSync(`${dirs.src}/js/script.js`)) {
 
-gulp.task('watchCss', function (cb) {
-  gulpSequence('clean_htmls', 'clean_css', 'app_scss', 'html')(cb);
-});
-
-gulp.task('watchJs', function (cb) {
-  gulpSequence('clean_htmls', 'clean_scripts', 'scripts', 'html')(cb);
-});
-
-
-gulp.task('html', function () {
-  gulp.src('./src/*.html')
+   gulp.src('./src/*.html')
     .pipe(inlinesource())
     .pipe(replace('$(', 'jQuery('))
     .pipe(replace('$', ''))
     .pipe(removeHtmlComments())
     .pipe(gulp.dest(`${dirs.dist}`));
-});
+  } 
+  done();
+};
 
-gulp.task('scripts', () => {
+const scripts = () => {
   var _entries = [`${dirs.src}/js/main.js`];
 
   gulp.src(_entries)
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest(`${dirs.src}/js/`));
 
-
-  return browserify({
-    entries: `${dirs.src}/js/bundle.js`,
-    debug: true,
-    transform: [
-      babelify.configure({
-        'presets': ['es2015']
-      })
-    ]
-  })
+    return browserify({
+      entries: `${dirs.src}/js/bundle.js`,
+      debug: true,
+      transform: [
+        babelify.configure({
+          'presets': ['es2015']
+        })
+      ]
+    })
     .bundle()
     .on('error', function () {
       var args = Array.prototype.slice.call(arguments);
@@ -82,10 +64,9 @@ gulp.task('scripts', () => {
     .pipe(buffer())
     .pipe(gulp.dest(`${dirs.src}/js`))
     .pipe(browserSync.stream());
-});
+};
 
-
-gulp.task('app_scss', function () {
+const app_scss = () => {
   var _entries = [`${dirs.src}/styles/main.scss`];
   return gulp.src(_entries)
     .pipe(sass().on('error', sass.logError))
@@ -97,30 +78,33 @@ gulp.task('app_scss', function () {
     .pipe(gulp.dest(`${dirs.src}/styles`))
     .pipe(gulp.dest(`${dirs.dist}/styles`))
     .pipe(browserSync.stream());
-});
+};
 
 
 // CLEAN
-gulp.task('clean_scripts', function () {
-  return del([
-    `${dirs.src}/js/script.js`, `${dirs.src}/js/bundle.js`
-  ]);
-});
+const clean_scripts = () => {
+  if (fs.existsSync(`${dirs.src}/js/script.js`)) {
+    return del([
+      `${dirs.src}/js/script.js`, `${dirs.src}/js/bundle.js`
+    ]);
+  }
+  return;
+};
 
-gulp.task('clean_htmls', function() {
+const clean_htmls = () => {
   return del([
     `${dirs.dist}/*.html`
   ]);
-});
+};
 
-gulp.task('clean_css', function () {
+const clean_css = () => {
   return del([
     `${dirs.src}/styles/*.css`,
     `${dirs.dist}/styles`
   ]);
-});
+};
 
-gulp.task('clean', function () {
+const clean = () => {
   return del([
     'dist/js',
     'dist/styles',
@@ -128,8 +112,32 @@ gulp.task('clean', function () {
     // we don't want to clean this file though so we negate the pattern
     //'!dist/mobile/deploy.json'
   ]);
-});
+};
 
-gulp.task('default', function(cb) {
-  gulpSequence('clean', 'app_scss', 'scripts', 'html', 'watch')(cb);
-});
+
+const watch = () => {
+  browserSync.init({
+    server: `${dirs.dist}`,
+    serveStaticOptions: {
+      extensions: ['html']
+    }
+  });
+
+  let filesJs = [`${dirs.src}/js/**/*.js`, `!${dirs.src}/js/script.js`, `!${dirs.src}/js/bundle.js`];
+
+  gulp.watch(`${dirs.src}/*.html`, gulp.series('html')).on('change', browserSync.reload);
+  gulp.watch(`${dirs.src}/styles/**/*.scss`, gulp.series('clean_htmls', 'clean_css', 'app_scss', 'html')).on('change', browserSync.reload);
+  gulp.watch(filesJs, gulp.series('clean_htmls', 'clean_scripts', 'scripts', 'html')).on('change', browserSync.reload);
+};
+
+
+gulp.task('clean_htmls', clean_htmls);
+gulp.task('clean_scripts', clean_scripts);
+gulp.task('clean_css', clean_css);
+gulp.task('scripts', scripts);
+gulp.task('html', html);
+gulp.task('clean', clean);
+gulp.task('watch', watch);
+gulp.task('app_scss', app_scss);
+
+gulp.task('default',  gulp.series('clean', 'app_scss', 'scripts', 'html', 'watch'));
