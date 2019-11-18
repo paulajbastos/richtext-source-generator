@@ -1,2 +1,1 @@
-import template from './template';
-template();
+console.log("funciona");
