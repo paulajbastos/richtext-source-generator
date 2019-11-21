@@ -1,0 +1,54 @@
+
+
+/******************************************************************************
+INPUT STYLES
+******************************************************************************/
+
+/* Inputs style
+* formato <input/></label></span>
+*/
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel] {
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  transform: none;
+}
+
+select[disabled] {
+  color: transparent;
+}
+
+.input-primary {
+  padding: 8px 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+:-moz-placeholder {
+  color: #999;
+}
+
+::-moz-placeholder {
+  color: #999;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+}
+
+::-ms-input-placeholder {
+  color: #999;
+}

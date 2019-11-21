@@ -1,13 +1,211 @@
-@import "settings/settings";
-
-@import "libs/animate/animate";
-
-@import "tools/mixins";
-@import "tools/functions";
-
 @import "generic/generic";
-@import "base/base";
-@import "objects/objects";
 @import "components/components";
-@import "helpers/helpers";
-@import "pages/pages";
+// @import "settings/settings";
+
+// @import "libs/animate/animate";
+
+// @import "tools/mixins";
+// @import "tools/functions";
+
+// @import "base/base";
+// @import "objects/objects";
+// @import "helpers/helpers";
+// @import "pages/pages";
+
+
+.rsv-form {
+  background: #f0f0f0;
+  width: 700px;
+  height: 400px;
+  /* display: flex; */
+  margin: 0 auto;
+  padding: 0;
+
+  @media (min-width: 1024px) {
+    padding: 0 30px;
+  }
+
+  .form-body {
+    width: 280px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 140px);
+
+    @media (min-width: 1024px) {
+      bottom: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+      font-size: 14px;
+      text-transform: none;
+      a {
+        text-transform: none;
+        text-decoration: underline;
+      }
+
+      &.-group-input {
+        width: 100%;
+      }
+
+      .form-item {
+        position: relative;
+        border-color: #000;
+        text-align: left;
+        .form-input {
+          width: 100%;
+          padding-right: 30px;
+        }
+
+        label.float-label {
+          top: 0;
+          font-weight: 400;
+        }
+      }
+
+      &.-error .form-item {
+        border-color: #f15b67;
+      }
+    }
+  }
+
+  .msg-block {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 11px;
+    text-transform: none;
+  }
+
+  .form-custom-checkbox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    transform: none;
+    .check {
+      position: absolute;
+      opacity: 0;
+      &:checked+.label {
+        color: #000;
+      }
+      &:checked+.label:before {
+        border: 1px solid #000;
+      }
+      &:checked+.label:after {
+        opacity: 1;
+      }
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(0,0,0, .9);
+      position: relative;
+      margin-left: 22px;
+      padding-top: 2px;
+      &:before {
+        position: absolute;
+        top: 0px;
+        left: -10px;
+        width: 14px;
+        height: 14px;
+        border: 1px solid #000;
+        background: #fff;
+        content: " ";
+      }
+      &:after {
+        position: absolute;
+        left: -6px;
+        top: 4px;
+        width: 7px;
+        height: 4px;
+        transform: rotateZ(-45deg);
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+        opacity: 0;
+        content: " ";
+      }
+    }
+  }
+}
+
+.action {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+
+  .rsv-loader-square {
+    display: none;
+    left: calc(50% - 28px);
+    margin-top: -15px;
+  }
+
+  a.btn {
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #000;
+    color: #FFF;
+
+    .bg {
+      transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    span {
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    &:hover {
+      .bg {opacity: .7;}
+    }
+  }
+}
+
+#formResponse {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  top: 0;
+  display: none;
+  // opacity: 0;
+  // visibility: hidden;
+  // width: 280px;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 40px;
+  // padding: 0 20px;
+  font-family: 'ReservaSans-Bold';
+
+  .title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .action {
+    width: 280px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 140px);
+  }
+}

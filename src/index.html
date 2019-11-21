@@ -21,13 +21,45 @@
     <!-- inline dist/styles/main.css -->
     <style rel="stylesheet" type="text/css" src="styles/main.css" inline></style>
 
-    <!-- Scoped CLASS NAME -->
-    <div class="your-scoped-class-name">
+    <!-- Scoped CLASS NAME OR ID -->
+    <div id="page-campanha-natal-mini-2019">
 
-      <!-- Your contents goes here  -->
-      <div class="col-md-12">
-        <h1>This is a Template</h1>
+      <h1>Calendar</h1>
+      <div class="calendar">
+        <div id="rsvFormCalendar" class="rsv-form clearfix">
+          <div class="title"></div>
+          <div class="subtitle"></div>
+          <div class="description"></div>
+          <div class="form-body">
+            <div class="form-group -group-input">
+              <div class="form-item">
+                <label class="float-label" for="">E-mail</label>
+                <input type="email" id="rsvFormModalEmailField" name="rsvFormModalEmailField" class="form-input"
+                  placeholder="E-mail">
+                <div class="msg-block">Informe o e-mail.</div>
+              </div>
+            </div>
+            <div class="action">
+              <div class="rsv-loader-square">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+              </div>
+              <a class="bt-submit btn" onclick="checkCalendarOption('2019-12-20-15-30');">
+                <div class="bg">
+                </div>
+                <span class="-bold" id="btSend" >Enviar</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="formResponse">
+          <div class="title">Enviado com Sucesso.</div>
+          <div class="subtitle">Aguarde!</div>
+        </div>
       </div>
+
 
       <!-- Here is the inline JS generated file that will be outputed on dist/yourfile.html  -->
       <!-- inline src/js/script.js -->
