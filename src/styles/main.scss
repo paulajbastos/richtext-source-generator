@@ -16,14 +16,10 @@
 .rsv-form {
   background: #f0f0f0;
   width: 700px;
-  height: 400px;
+  height: 100%;
   /* display: flex; */
   margin: 0 auto;
-  padding: 0;
-
-  @media (min-width: 1024px) {
-    padding: 0 30px;
-  }
+  padding: 30px;
 
   .form-body {
     // width: 280px;
