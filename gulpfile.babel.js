@@ -31,7 +31,7 @@ const html = (done) => {
     .pipe(replace('$', ''))
     .pipe(removeHtmlComments())
     .pipe(gulp.dest(`${dirs.dist}`));
-  } 
+  }
   done();
 };
 
@@ -114,6 +114,11 @@ const clean = () => {
   ]);
 };
 
+const copy_files = () => {
+  var _entries = [`${dirs.src}/assets/**/*`];
+  return gulp.src(_entries)
+    .pipe(gulp.dest('dist/'));
+};
 
 const watch = () => {
   browserSync.init({
@@ -139,5 +144,6 @@ gulp.task('html', html);
 gulp.task('clean', clean);
 gulp.task('watch', watch);
 gulp.task('app_scss', app_scss);
+gulp.task('copy_files', copy_files);
 
-gulp.task('default',  gulp.series('clean', 'app_scss', 'scripts', 'html', 'watch'));
+gulp.task('default',  gulp.series('clean', 'copy_files', 'app_scss', 'scripts', 'html', 'watch'));
