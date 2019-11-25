@@ -16,7 +16,6 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-copy": "^4.0.1",
     "gulp-inline-source": "^3.2.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-remove-html-comments": "^1.0.1",

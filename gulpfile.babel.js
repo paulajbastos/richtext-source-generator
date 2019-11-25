@@ -5,7 +5,6 @@ import browserify from 'browserify';
 import buffer from 'vinyl-buffer';
 import concat from 'gulp-concat';
 import gulp from 'gulp';
-import gulpCopy from 'gulp-copy';
 import sass from 'gulp-sass';
 import source from 'vinyl-source-stream';
 import plugins from 'gulp-load-plugins';
