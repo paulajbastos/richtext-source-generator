@@ -1,0 +1,12 @@
+/* Webfont: ReservaSans-Bold */@font-face {
+    font-family: 'ReservaSans';
+    src: url('ReservaSans-Bold.eot'); /* IE9 Compat Modes */
+    src: url('ReservaSans-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('ReservaSans-Bold.woff') format('woff'), /* Modern Browsers */
+         url('ReservaSans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('ReservaSans-Bold.svg#ReservaSans-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

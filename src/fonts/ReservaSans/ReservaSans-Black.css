@@ -1,0 +1,12 @@
+/* Webfont: ReservaSans-Black */@font-face {
+    font-family: 'ReservaSansBlack';
+    src: url('ReservaSans-Black.eot'); /* IE9 Compat Modes */
+    src: url('ReservaSans-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('ReservaSans-Black.woff') format('woff'), /* Modern Browsers */
+         url('ReservaSans-Black.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('ReservaSans-Black.svg#ReservaSans-Black') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

@@ -1,0 +1,12 @@
+/* Webfont: ReservaSerif-ThinItalic */@font-face {
+    font-family: 'ReservaSerifThin';
+    src: url('ReservaSerif-ThinItalic.eot'); /* IE9 Compat Modes */
+    src: url('ReservaSerif-ThinItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('ReservaSerif-ThinItalic.woff') format('woff'), /* Modern Browsers */
+         url('ReservaSerif-ThinItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('ReservaSerif-ThinItalic.svg#ReservaSerif-ThinItalic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
