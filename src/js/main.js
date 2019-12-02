@@ -3,9 +3,13 @@ let bt = document.getElementById('btSend');
 bt.onclick = function() {
 
   // "data": "{\n    \"appointment\" : \"2019-12-20-15-30\"\n}"
-  // "data": JSON.stringify(data)
   var data = {
-    "appointment" : "2019-12-20-15-30"
+    "id": "5ddbd612a11d000e1748019f",
+    "appointment": [
+      {
+        "hour": "16-00"
+      }
+    ]
   };
 
   var settings = {
