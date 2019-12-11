@@ -78,7 +78,7 @@
 
 
 #reserva-landing-container {
-  font-size: calc(1em + 1vw) !important;
+  font-size: calc((1em + 1vw) * 0.8) !important;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -98,18 +98,20 @@
   justify-content: center;
 }
 
-
 #landing-header {
   display: block;
+  opacity: 0;
   width: 100%;
   text-align: center;
   position: fixed;
   z-index:10;
   top: 70px;
+  transform: translateY(50%);
+  transition: all 1s;
 }
   #landing-header img {
       width: 10%;
-      max-width: 8em;
+      max-width: 100px;
   }
 
 .page-center {
@@ -238,6 +240,14 @@ p.landing-slogan {
   font-size: 14vh;
   line-height: 16vh;
   color: white;
+}
+
+@media only screen and (max-width: 500px) {
+
+  p.landing-slogan {
+    font-size: 20vw;
+    line-height: 16vh;
+  }
 }
 
 .thirteenth-page .landing-page-content {
@@ -412,6 +422,16 @@ p.landing-slogan {
 .horizontal-placeholder {
    display: none;
 }
+
+.horizontal .page-fadein {
+  opacity: 0.5 !important;
+}
+
+.horizontal .fadein-text {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
 }
 
 .fourteenth-page .landing-page-content{
@@ -468,10 +488,6 @@ p.landing-slogan {
 .bottom-rect {
   transform: translate(-50%, 15vh);
   opacity: 1;
-}
-
-.video-page {
-  margin-top: 59px;
 }
 
 .fifteenth-page a, .fifteenth-page a:active, .fifteenth-page a:hover {

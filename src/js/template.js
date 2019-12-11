@@ -27,6 +27,9 @@ export default function template() {
             if(position === undefined)
                 position = 0;
 
+
+            _this.setClass(position, ".second-page ", "#landing-header", "appear");
+
             //second page
             _this.setClass(position, ".second-page ", ".second-page .fadein-text", "appear");
 
@@ -39,26 +42,27 @@ export default function template() {
             _this.setClass(position, ".fourth-page ", ".rect2", 'bottom-rect');
 
             //fifth transition
-            _this.pinContainer(position, ".third-page", ".seventh-placeholder", ".fourth-page");
             _this.fadeinTextScene(position, ".fifth-page", ".fifth-fadein");
 
             if(_this.pageWidth > 600)
             {
+                _this.pinContainer(position, ".third-page", ".seventh-placeholder", ".fourth-page");
+
                 _this.createFifthPage(position);
                 this.createHorizontalScene(position, ".fifth-page", ".sixth-page", ".fifth-placeholder");
                 this.createHorizontalScene(position, ".sixth-page", ".seventh-page", ".sixth-placeholder");
                 this.createHorizontalScene(position, ".seventh-page", ".eighth-page", ".seventh-placeholder");
-                this.createHorizontalScene(position, ".eighth-page", ".nineth-page", ".eighth-placeholder");
-                this.createHorizontalScene(position, ".nineth-page", ".eleventh-page", ".nineth-placeholder");
-                this.createTwelfthPage(position);
-            }
+                this.createNinethPage(position);
 
-            this.fadeinTextScene(position, ".sixth-page", ".sixth-fadein");
+                this.fadeinTextScene(position, ".sixth-page", ".sixth-fadein");
 
             this.fadeinTextScene(position, ".seventh-page", ".seventh-fadein");
 
             this.fadeinTextScene(position, ".eighth-page", ".eighth-fadein");
 
+            }
+
+            
             //brasil
             _this.setClass(position, ".thirteenth-page", ".brasil-full", "encher", (_this.pageSize * 0.1));
             _this.setClass(position, ".thirteenth-page", ".brasil .fadein-text", "appear", (_this.pageSize * 0.1));
@@ -79,6 +83,11 @@ export default function template() {
                 $(container).css("position", "fixed");
             else if(position < offset && $(container).css("position") === "fixed")
                 $(container).css("position", "relative");
+
+            if(position >= duration + (this.pageSize * 2))
+                $(container).hide();
+            else
+                $(container).show();
         },
 
         parallaxText: function(position, trigger, element) {
@@ -144,28 +153,25 @@ export default function template() {
             }
         },
 
-        createTwelfthPage: function (position) {
-            var offset = $(".twelfth-page").offset().top - (this.pageSize - 30);
+        createNinethPage: function (position) {
+            var offset = $(".nineth-page").offset().top - (this.pageSize - 30);
             var duration = offset + this.pageSize;
 
             if(position <= duration && position >= offset)
             {
                 var porc = Math.ceil(((100 * (position - offset)) / (duration - offset)));
-                $(".eleventh-page").css("top", "calc(-" + porc + '% + 40px)');
-                //$(".eleventh-page .landing-page-content").css("transform", "translateY(-" + (porc * 0.7) + '%)');
-                $(".eleventh-page").attr("passedY", "true");
+                $(".eighth-page").css("top", "calc(-" + porc + '% + 40px)');
+                $(".eighth-page").attr("passedY", "true");
             }
             else if(position > duration)
             {
-                $(".eleventh-page").css("top", '-100%');
-                //$(".eleventh-page .landing-page-content").css("transform", 'translateY(-70%)');
-                $(".eleventh-page").attr("passedY", "true");
+                $(".eighth-page").css("top", '-100%');
+                $(".eighth-page").attr("passedY", "true");
             }
-            else if(position < offset && $(".eleventh-page").attr("passedY") == "true")
+            else if(position < offset && $(".eighth-page").attr("passedY") == "true")
             {
-                $(".eleventh-page").css("top", 'calc(0% + 40px)');
-                //$(".eleventh-page .landing-page-content").css("transform", 'translateY(0%)');
-                $(".eleventh-page").attr("passedY", "false");
+                $(".eighth-page").css("top", 'calc(0% + 40px)');
+                $(".eighth-page").attr("passedY", "false");
             }
         },
 
